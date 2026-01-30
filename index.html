@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="el">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Μιχαήλ Σ. Μιχαλακόπουλος | Διηγήματα</title>
+    <meta name="description" content="Συλλογή διηγημάτων εμπνευσμένων από την ελληνική λαογραφία και την παράδοση">
+    <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,700;1,400&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --bg-color: #0d0d0d;
+            --paper-color: #f4f1ea;
+            --accent-color: #8b0000;
+            --text-color: #2c2c2c;
+            --border-color: #6b4423;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            background-image: 
+                radial-gradient(circle at 20% 50%, rgba(139, 0, 0, 0.03) 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, rgba(139, 0, 0, 0.03) 0%, transparent 50%);
+            font-family: 'EB Garamond', serif;
+            color: var(--text-color);
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background-color: var(--paper-color);
+            padding: 60px 50px;
+            box-shadow: 0 0 60px rgba(0,0,0,0.9);
+            border: 3px double var(--border-color);
+        }
+
+        header {
+            text-align: center;
+            border-bottom: 3px double var(--accent-color);
+            padding-bottom: 40px;
+            margin-bottom: 50px;
+        }
+
+        h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3rem;
+            color: var(--accent-color);
+            letter-spacing: 4px;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+        }
+
+        .subtitle {
+            font-style: italic;
+            font-size: 1.3rem;
+            color: #555;
+            margin-top: 10px;
+        }
+
+        nav {
+            margin: 40px 0;
+            padding: 20px;
+            background: rgba(139, 0, 0, 0.05);
+            border-left: 4px solid var(--accent-color);
+        }
+
+        nav a {
+            display: inline-block;
+            margin: 0 20px;
+            color: var(--accent-color);
+            text-decoration: none;
+            font-size: 1.2rem;
+            transition: all 0.3s;
+        }
+
+        nav a:hover {
+            color: #000;
+            text-decoration: underline;
+        }
+
+        .stories-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin: 40px 0;
+        }
+
+        .story-card {
+            background: rgba(255, 255, 255, 0.5);
+            border: 2px solid var(--border-color);
+            padding: 30px;
+            transition: all 0.3s;
+            cursor: pointer;
+        }
+
+        .story-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            background: rgba(255, 255, 255, 0.8);
+        }
+
+        .story-card h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            color: var(--accent-color);
+            margin-bottom: 15px;
+        }
+
+        .story-card .excerpt {
+            font-size: 1.1rem;
+            line-height: 1.7;
+            color: var(--text-color);
+            margin-bottom: 15px;
+        }
+
+        .story-card .meta {
+            font-style: italic;
+            font-size: 0.95rem;
+            color: #666;
+            margin-top: 15px;
+        }
+
+        .read-more {
+            display: inline-block;
+            margin-top: 15px;
+            padding: 10px 25px;
+            background: var(--accent-color);
+            color: white;
+            text-decoration: none;
+            font-size: 1rem;
+            transition: all 0.3s;
+        }
+
+        .read-more:hover {
+            background: #000;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 60px;
+            padding-top: 30px;
+            border-top: 2px solid var(--border-color);
+            font-style: italic;
+            color: #777;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 40px 30px;
+            }
+            
+            h1 {
+                font-size: 2rem;
+            }
+            
+            nav a {
+                display: block;
+                margin: 10px 0;
+            }
+            
+            .stories-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Μιχαήλ Σ. Μιχαλακόπουλος</h1>
+            <p class="subtitle">Διηγήματα εμπνευσμένα από την ελληνική παράδοση</p>
+        </header>
+
+        <nav>
+            <a href="index.html">Αρχική</a>
+            <a href="#diegimata">Διηγήματα</a>
+            <a href="#biografia">Βιογραφικό</a>
+            <a href="#epikoinonia">Επικοινωνία</a>
+        </nav>
+
+        <section id="diegimata">
+            <div class="stories-grid">
+                
+                <div class="story-card" onclick="window.location.href='ta-smyrdakia.html'">
+                    <h2>Τα Σμυρδάκια</h2>
+                    <p class="excerpt">
+                        Εδώ και χρόνια ζω μακριά από τα μέρη όπου γεννήθηκα, μα η απόσταση, όπως αποδείχτηκε, δεν ήταν παρά μια ψευδαίσθηση. Τις νύχτες του χειμώνα, όταν ο βοριάς χτυπά τα παραθυρόφυλλα...
+                    </p>
+                    <p class="meta">Γοτθικό τρόμου | 15 λεπτά ανάγνωση</p>
+                    <a href="ta-smyrdakia.html" class="read-more">Διαβάστε το διήγημα →</a>
+                </div>
+
+                <div class="story-card">
+                    <h2>Σύντομα: Νέο Διήγημα</h2>
+                    <p class="excerpt">
+                        Έρχεται σύντομα νέο διήγημα...
+                    </p>
+                    <p class="meta">Υπό κατασκευή</p>
+                </div>
+
+            </div>
+        </section>
+
+        <section id="biografia" style="margin-top: 60px; padding: 30px; background: rgba(139,0,0,0.05); border-left: 4px solid var(--accent-color);">
+            <h2 style="font-family: 'Playfair Display', serif; font-size: 2rem; color: var(--accent-color); margin-bottom: 20px;">Βιογραφικό</h2>
+            <p style="font-size: 1.2rem; line-height: 1.8;">
+                Συγγραφέας και ερευνητής της ελληνικής λογοτεχνίας, αφιερωμένος στην ανάδειξη των παραδοσιακών οικογενειακών αφηγήσεων, των λαϊκών μύθων και της αυθεντικής γλώσσας. Το έργο μου επικεντρώνεται στη διατήρηση και τη δημιουργική μεταγραφή βιωματικών ιστοριών.
+            </p>
+        </section>
+
+        <section id="epikoinonia" style="margin-top: 40px; text-align: center;">
+            <h2 style="font-family: 'Playfair Display', serif; font-size: 2rem; color: var(--accent-color); margin-bottom: 20px;">Επικοινωνία</h2>
+            <p style="font-size: 1.2rem;">
+                Email: <a href="mailto:michalakopoulosmichael@gmail.com" style="color: var(--accent-color);">michalakopoulosmichael@gmail.com</a>
+            </p>
+        </section>
+
+        <footer>
+            <p>&copy; 2026 Μιχαήλ Σωτηρίου Μιχαλακόπουλος — Διατηρούνται όλα τα πνευματικά δικαιώματα</p>
+        </footer>
+    </div>
+</body>
+</html>
