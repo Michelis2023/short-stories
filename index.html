@@ -2,38 +2,19 @@
 <html lang="el">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-    <title>Μιχαήλ Σ. Μιχαλακόπουλος | Διηγήματα Τρόμου</title>
-    <meta name="description" content="Συλλογή γοτθικών διηγημάτων εμπνευσμένων από την ελληνική παράδοση και λαϊκούς μύθους">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Μιχαήλ Σ. Μιχαλακόπουλος | Διηγήματα</title>
+    <meta name="description" content="Συλλογή διηγημάτων εμπνευσμένων από την ελληνική λαογραφία και την παράδοση">
     <meta name="theme-color" content="#8b0000">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <link rel="manifest" href="data:application/manifest+json,{
-        &quot;name&quot;: &quot;Μιχαήλ Σ. Μιχαλακόπουλος&quot;,
-        &quot;short_name&quot;: &quot;Διηγήματα&quot;,
-        &quot;start_url&quot;: &quot;/&quot;,
-        &quot;display&quot;: &quot;standalone&quot;,
-        &quot;background_color&quot;: &quot;#f8f6f0&quot;,
-        &quot;theme_color&quot;: &quot;#8b0000&quot;,
-        &quot;icons&quot;: [{
-            &quot;src&quot;: &quot;data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTkyIiBoZWlnaHQ9IjE5MiIgdmlld0JveD0iMCAwIDE5MiAxOTIiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSIxOTIiIGhlaWdodD0iMTkyIiBmaWxsPSIjOGIwMDAwIi8+Cjx0ZXh0IHg9Ijk2IiB5PSIxMjAiIGZvbnQtZmFtaWx5PSJBcmlhbCIgZm9udC1zaXplPSI0OCIgZmlsbD0id2hpdGUiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGRvbWluYW50LWJhc2VsaW5lPSJtaWRkbGUiPk1TPC90ZXh0Pgo8L3N2Zz4=&quot;,
-            &quot;sizes&quot;: &quot;192x192&quot;,
-            &quot;type&quot;: &quot;image/svg+xml&quot;
-        }]
-    }">
-    <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,700;1,400&family=Playfair+Display:ital,wght@0,700;0,900;1,700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,700;1,400&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
     
     <style>
         :root {
-            --bg-primary: #0a0a0a;
-            --paper-bg: #faf8f5;
-            --accent-primary: #8b0000;
-            --accent-secondary: #a52a2a;
-            --text-primary: #1f1a14;
-            --text-secondary: #6b4423;
-            --border-subtle: rgba(107,68,35,0.2);
-            --shadow-light: 0 8px 32px rgba(0,0,0,0.12);
-            --shadow-hover: 0 20px 60px rgba(139,0,0,0.25);
+            --bg-color: #0d0d0d;
+            --paper-color: #f8f6f0;
+            --accent-color: #8b0000;
+            --text-color: #2c2c2c;
+            --border-color: #6b4423;
         }
 
         * {
@@ -44,39 +25,30 @@
 
         html {
             scroll-behavior: smooth;
-            -webkit-text-size-adjust: 100%;
-            text-size-adjust: 100%;
         }
 
         body {
-            background: linear-gradient(180deg, var(--bg-primary) 0%, #1a1a1a 100%);
+            background: linear-gradient(135deg, var(--bg-color) 0%, #1a1a1a 100%);
             font-family: 'EB Garamond', serif;
-            color: var(--text-primary);
+            color: var(--text-color);
             line-height: 1.65;
             overflow-x: hidden;
-            font-size: 16px;
-            -webkit-font-smoothing: antialiased;
-            -moz-osx-font-smoothing: grayscale;
         }
 
         .container {
-            max-width: 1100px;
+            max-width: 1200px;
             margin: 0 auto;
-            background: var(--paper-bg);
+            background: var(--paper-color);
             min-height: 100vh;
-            box-shadow: 0 0 120px rgba(0,0,0,0.9);
-            border: 2px solid var(--border-subtle);
-            position: relative;
+            box-shadow: 0 0 100px rgba(0,0,0,0.8);
+            border: 2px solid var(--border-color);
         }
 
-        /* HERO SECTION */
+        /* HEADER */
         header {
             text-align: center;
-            padding: clamp(50px, 15vw, 100px) clamp(25px, 10vw, 60px);
-            background: linear-gradient(135deg, 
-                rgba(139,0,0,0.08) 0%, 
-                rgba(165,42,42,0.04) 50%, 
-                transparent 100%);
+            padding: clamp(40px, 12vw, 80px) clamp(20px, 8vw, 50px);
+            background: linear-gradient(135deg, rgba(139,0,0,0.05) 0%, transparent 100%);
             position: relative;
             overflow: hidden;
         }
@@ -84,104 +56,87 @@
         header::before {
             content: '';
             position: absolute;
-            inset: 0;
-            background: 
-                radial-gradient(circle at 20% 30%, rgba(139,0,0,0.12) 0%, transparent 50%),
-                radial-gradient(circle at 80% 70%, rgba(165,42,42,0.08) 0%, transparent 50%);
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 30% 20%, rgba(139,0,0,0.1) 0%, transparent 70%);
             pointer-events: none;
         }
 
         h1 {
             font-family: 'Playfair Display', serif;
-            font-size: clamp(2.4rem, 9vw, 4.5rem);
-            background: linear-gradient(135deg, var(--accent-primary) 0%, var(--accent-secondary) 60%, #b22222 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            font-weight: 900;
-            line-height: 1.05;
-            margin-bottom: clamp(20px, 5vw, 35px);
-            text-shadow: 
-                0 2px 8px rgba(139,0,0,0.3),
-                0 0 20px rgba(139,0,0,0.1);
+            font-size: clamp(2.2rem, 8vw, 4rem);
+            color: var(--accent-color);
+            font-weight: 700;
+            line-height: 1.1;
+            margin-bottom: clamp(15px, 4vw, 25px);
             position: relative;
             z-index: 2;
-            letter-spacing: clamp(0px, 0.8vw, 2px);
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
         }
 
         .subtitle {
             font-style: italic;
-            font-size: clamp(1.2rem, 4.5vw, 1.5rem);
-            color: var(--text-secondary);
-            margin-top: clamp(15px, 4vw, 30px);
+            font-size: clamp(1.15rem, 4vw, 1.4rem);
+            color: #5a4a3a;
+            margin-top: clamp(10px, 3vw, 20px);
             font-weight: 400;
-            max-width: 90%;
-            margin-left: auto;
-            margin-right: auto;
             position: relative;
             z-index: 2;
-            opacity: 0.95;
         }
 
-        /* STICKY NAVIGATION */
+        /* NAVIGATION */
         nav {
-            background: rgba(139,0,0,0.98);
-            backdrop-filter: blur(20px);
-            -webkit-backdrop-filter: blur(20px);
-            padding: clamp(18px, 6vw, 28px);
+            background: rgba(139,0,0,0.95);
+            padding: clamp(15px, 5vw, 25px);
             position: sticky;
             top: 0;
-            z-index: 1000;
-            box-shadow: 0 8px 40px rgba(139,0,0,0.4);
-            border-bottom: 1px solid rgba(255,255,255,0.1);
+            z-index: 100;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.2);
         }
 
         nav a {
             display: block;
-            margin: 6px 0;
-            color: rgba(255,255,255,0.95);
+            margin: 8px 0;
+            color: white;
             text-decoration: none;
-            font-size: clamp(1.15rem, 4vw, 1.3rem);
-            padding: clamp(14px, 4.5vw, 18px) clamp(25px, 8vw, 35px);
-            border-radius: 12px;
-            transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            font-size: clamp(1.1rem, 3.5vw, 1.25rem);
+            padding: 12px 20px;
+            border-radius: 8px;
+            transition: all 0.3s;
             font-weight: 500;
             text-align: center;
-            border: 1px solid rgba(255,255,255,0.1);
         }
 
-        nav a:hover, nav a:focus {
-            background: rgba(255,255,255,0.25);
-            color: white;
-            transform: translateY(-2px);
-            box-shadow: 0 8px 25px rgba(255,255,255,0.15);
+        nav a:hover {
+            background: rgba(255,255,255,0.2);
+            transform: scale(1.02);
         }
 
-        /* CONTENT SECTIONS */
-        .content-section {
-            padding: clamp(50px, 12vw, 80px) clamp(35px, 10vw, 60px);
-            max-width: 900px;
-            margin: 0 auto;
-        }
-
+        /* STORIES GRID */
         .stories-grid {
             display: flex;
             flex-direction: column;
-            gap: clamp(30px, 8vw, 45px);
+            gap: clamp(25px, 6vw, 35px);
+            padding: clamp(30px, 8vw, 50px);
+            max-width: 800px;
+            margin: 0 auto;
         }
 
         .story-card {
-            background: rgba(255,255,255,0.9);
-            backdrop-filter: blur(15px);
-            -webkit-backdrop-filter: blur(15px);
-            border: 2px solid var(--border-subtle);
-            padding: clamp(30px, 9vw, 45px);
-            border-radius: 24px;
-            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            background: rgba(255,255,255,0.85);
+            border: 2px solid rgba(107,68,35,0.3);
+            padding-top: clamp(35px, 9vw, 48px);
+            padding-left: clamp(25px, 7vw, 35px);
+            padding-right: clamp(25px, 7vw, 35px);
+            padding-bottom: clamp(25px, 7vw, 35px);
+            border-radius: 16px;
+            transition: all 0.4s;
             cursor: pointer;
             position: relative;
             overflow: hidden;
-            box-shadow: var(--shadow-light);
+            box-shadow: 0 8px 32px rgba(0,0,0,0.1);
         }
 
         .story-card::before {
@@ -190,20 +145,166 @@
             top: 0;
             left: 0;
             right: 0;
-            height: 6px;
-            background: linear-gradient(90deg, var(--accent-primary), var(--accent-secondary), var(--accent-primary));
-            border-radius: 24px 24px 0 0;
+            height: 5px;
+            background: linear-gradient(90deg, var(--accent-color), #a52a2a, var(--accent-color));
+            border-radius: 16px 16px 0 0;
         }
 
-        .story-card:hover, .story-card:focus-within {
-            transform: translateY(-16px) scale(1.015);
-            box-shadow: var(--shadow-hover), 0 0 0 1px rgba(139,0,0,0.2);
-            border-color: rgba(139,0,0,0.4);
+        .story-card:hover {
+            transform: translateY(-12px) scale(1.02);
+            box-shadow: 0 20px 60px rgba(139,0,0,0.3);
+            border-color: var(--accent-color);
         }
 
         .story-card h2 {
             font-family: 'Playfair Display', serif;
-            font-size: clamp(1.8rem, 6vw, 2.6rem);
-            background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
-            -webkit-background-clip: text;
-            -webkit-text-fill
+            font-size: clamp(1.6rem, 5vw, 2.2rem);
+            color: var(--accent-color);
+            margin-bottom: clamp(12px, 3vw, 20px);
+            line-height: 1.25;
+            font-weight: 700;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+        }
+
+        .story-card .excerpt {
+            font-size: clamp(1rem, 3vw, 1.15rem);
+            line-height: 1.75;
+            color: var(--text-color);
+            margin-bottom: clamp(15px, 4vw, 25px);
+        }
+
+        .story-card .meta {
+            font-style: italic;
+            font-size: clamp(0.9rem, 2.5vw, 1rem);
+            color: #6b4423;
+            margin-top: clamp(10px, 3vw, 20px);
+            font-weight: 500;
+        }
+
+        .read-more {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: clamp(14px, 4vw, 18px) clamp(24px, 6vw, 32px);
+            background: linear-gradient(135deg, var(--accent-color), #7f1d1d);
+            color: white;
+            text-decoration: none;
+            font-size: clamp(1rem, 3vw, 1.1rem);
+            border-radius: 50px;
+            transition: all 0.3s;
+            font-weight: 600;
+            box-shadow: 0 8px 25px rgba(139,0,0,0.4);
+            min-height: 52px;
+            justify-content: center;
+        }
+
+        .read-more:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(139,0,0,0.6);
+            background: linear-gradient(135deg, #7f1d1d, var(--accent-color));
+        }
+
+        /* SECTIONS */
+        section {
+            padding: clamp(40px, 10vw, 60px) clamp(30px, 8vw, 50px);
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        section h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(1.8rem, 5vw, 2.5rem);
+            color: var(--accent-color);
+            text-align: center;
+            margin-bottom: clamp(25px, 6vw, 40px);
+            font-weight: 700;
+        }
+
+        #biografia {
+            background: linear-gradient(135deg, rgba(139,0,0,0.03) 0%, rgba(107,68,35,0.03) 100%);
+            border-radius: 20px;
+            margin: clamp(40px, 10vw, 60px) clamp(20px, 5vw, 40px);
+            border: 1px solid rgba(107,68,35,0.2);
+        }
+
+        #biografia p {
+            font-size: clamp(1.05rem, 3vw, 1.25rem);
+            line-height: 1.85;
+            text-align: justify;
+        }
+
+        #epikoinonia {
+            text-align: center;
+        }
+
+        #epikoinonia a {
+            color: var(--accent-color);
+            font-weight: 600;
+            font-size: clamp(1.1rem, 3vw, 1.25rem);
+            text-decoration: none;
+        }
+
+        footer {
+            text-align: center;
+            padding: clamp(30px, 8vw, 50px);
+            border-top: 2px solid var(--border-color);
+            font-style: italic;
+            color: #6b4423;
+            font-size: clamp(0.95rem, 2.5vw, 1.05rem);
+        }
+
+        @media print {
+            body { background: white; }
+            .container { box-shadow: none; border: none; }
+            nav { display: none; }
+            .read-more { display: none; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Μιχαήλ Σ. Μιχαλακόπουλος</h1>
+            <p class="subtitle">Διηγήματα εμπνευσμένα από την ελληνική παράδοση</p>
+        </header>
+
+        <nav>
+            <a href="#diegimata">Διηγήματα</a>
+            <a href="#biografia">Βιογραφικό</a>
+            <a href="#epikoinonia">Επικοινωνία</a>
+        </nav>
+
+        <section id="diegimata">
+            <div class="stories-grid">
+                <div class="story-card" onclick="window.location.href='ta-smyrdakia.html'">
+                    <h2>Τα Σμυρδάκια</h2>
+                    <p class="excerpt">Εδώ και χρόνια ζω μακριά από τα μέρη όπου γεννήθηκα, μα η απόσταση, όπως αποδείχτηκε, δεν ήταν παρά μια ψευδαίσθηση...</p>
+                    <p class="meta">Γοτθικό τρόμου | 15 λεπτά</p>
+                    <a href="ta-smyrdakia.html" class="read-more">Διάβασε τώρα →</a>
+                </div>
+
+                <div class="story-card" onclick="window.location.href='to-xeri-kato-apo-to-xoma.html'">
+                    <h2>Το Χέρι Κάτω από το Χώμα</h2>
+                    <p class="excerpt">Στο βάθος του χειμώνα, εκείνες τις νύχτες που ο βοριάς ξεσπάει με μανία, οι άνθρωποι μαζεύονται γύρω από τη φωτιά...</p>
+                    <p class="meta">Γοτθικό τρόμου | 20 λεπτά</p>
+                    <a href="to-xeri-kato-apo-to-xoma.html" class="read-more">Διάβασε τώρα →</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="biografia">
+            <h2>Βιογραφικό</h2>
+            <p>Συγγραφέας και ερευνητής της ελληνικής λογοτεχνίας, αφιερωμένος στην ανάδειξη των παραδοσιακών οικογενειακών αφηγήσεων, των λαϊκών μύθων και της αυθεντικής γλώσσας. Το έργο μου επικεντρώνεται στη διατήρηση και τη δημιουργική μεταγραφή βιωματικών ιστοριών.</p>
+        </section>
+
+        <section id="epikoinonia">
+            <h2>Επικοινωνία</h2>
+            <p>Email: <a href="mailto:michalakopoulosmichael@gmail.com">michalakopoulosmichael@gmail.com</a></p>
+        </section>
+
+        <footer>
+            <p>&copy; 2026 Μιχαήλ Σωτηρίου Μιχαλακόπουλος — Διατηρούνται όλα τα πνευματικά δικαιώματα</p>
+        </footer>
+    </div>
+</body>
+</html>
