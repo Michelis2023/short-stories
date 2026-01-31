@@ -12,7 +12,7 @@
 
 | # | Τίτλος | Περιγραφή | Διάβασε |
 |---|---------|-----------|----------|
-| 1 | **Τα Σμυρδάκια** | Γοτθικό διήγημα παραδοσιακής τρομοκρατίας | [🔗 Διάβασε](https://michelis2023.github.io/short-stories/ta-smyrdakia.html) |
+| 1 | **Τα Σμυρδάκια** | Γοτθικό διήγημα τρόμου | [🔗 Διάβασε](https://michelis2023.github.io/short-stories/ta-smyrdakia.html) |
 | 2 | **Το Χέρι Κάτω από το Χώμα** | Ιστορία υπερφυσικού φόβου | [🔗 Διάβασε](https://michelis2023.github.io/short-stories/to-xeri-kato-apo-to-xoma.html) |
 
 ---
