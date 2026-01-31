@@ -41,7 +41,6 @@
             background: var(--paper-color);
             min-height: 100vh;
             box-shadow: 0 0 100px rgba(0,0,0,0.8);
-            border: 2px solid var(--border-color);
         }
 
         /* HEADER */
@@ -118,24 +117,20 @@
         .stories-grid {
             display: flex;
             flex-direction: column;
-            gap: clamp(25px, 6vw, 35px);
+            gap: clamp(30px, 8vw, 40px);
             padding: clamp(30px, 8vw, 50px);
             max-width: 800px;
             margin: 0 auto;
         }
 
         .story-card {
-            background: rgba(255,255,255,0.85);
-            border: 2px solid rgba(107,68,35,0.3);
-            padding-top: clamp(35px, 9vw, 48px);
-            padding-left: clamp(25px, 7vw, 35px);
-            padding-right: clamp(25px, 7vw, 35px);
-            padding-bottom: clamp(25px, 7vw, 35px);
+            background: rgba(255,255,255,0.9);
+            border: 2px solid rgba(107,68,35,0.25);
             border-radius: 16px;
-            transition: all 0.4s;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
             cursor: pointer;
             position: relative;
-            overflow: hidden;
+            overflow: visible;
             box-shadow: 0 8px 32px rgba(0,0,0,0.1);
         }
 
@@ -145,39 +140,43 @@
             top: 0;
             left: 0;
             right: 0;
-            height: 5px;
+            height: 4px;
             background: linear-gradient(90deg, var(--accent-color), #a52a2a, var(--accent-color));
             border-radius: 16px 16px 0 0;
+        }
+
+        .story-card-content {
+            padding: clamp(30px, 8vw, 40px) clamp(25px, 7vw, 35px) clamp(25px, 7vw, 35px);
         }
 
         .story-card:hover {
             transform: translateY(-12px) scale(1.02);
             box-shadow: 0 20px 60px rgba(139,0,0,0.3);
-            border-color: var(--accent-color);
+            border-color: rgba(139,0,0,0.5);
         }
 
         .story-card h2 {
             font-family: 'Playfair Display', serif;
-            font-size: clamp(1.6rem, 5vw, 2.2rem);
+            font-size: clamp(1.7rem, 5.5vw, 2.3rem);
             color: var(--accent-color);
-            margin-bottom: clamp(12px, 3vw, 20px);
-            line-height: 1.25;
+            margin-bottom: clamp(15px, 4vw, 22px);
+            line-height: 1.2;
             font-weight: 700;
-            text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.08);
         }
 
         .story-card .excerpt {
-            font-size: clamp(1rem, 3vw, 1.15rem);
+            font-size: clamp(1.05rem, 3.5vw, 1.18rem);
             line-height: 1.75;
             color: var(--text-color);
-            margin-bottom: clamp(15px, 4vw, 25px);
+            margin-bottom: clamp(18px, 5vw, 28px);
         }
 
         .story-card .meta {
             font-style: italic;
-            font-size: clamp(0.9rem, 2.5vw, 1rem);
+            font-size: clamp(0.95rem, 2.8vw, 1.05rem);
             color: #6b4423;
-            margin-top: clamp(10px, 3vw, 20px);
+            margin-bottom: clamp(18px, 5vw, 25px);
             font-weight: 500;
         }
 
@@ -185,16 +184,16 @@
             display: inline-flex;
             align-items: center;
             gap: 10px;
-            padding: clamp(14px, 4vw, 18px) clamp(24px, 6vw, 32px);
+            padding: clamp(14px, 4vw, 18px) clamp(26px, 7vw, 36px);
             background: linear-gradient(135deg, var(--accent-color), #7f1d1d);
             color: white;
             text-decoration: none;
-            font-size: clamp(1rem, 3vw, 1.1rem);
+            font-size: clamp(1.05rem, 3.2vw, 1.15rem);
             border-radius: 50px;
             transition: all 0.3s;
             font-weight: 600;
             box-shadow: 0 8px 25px rgba(139,0,0,0.4);
-            min-height: 52px;
+            min-height: 50px;
             justify-content: center;
         }
 
@@ -213,10 +212,10 @@
 
         section h2 {
             font-family: 'Playfair Display', serif;
-            font-size: clamp(1.8rem, 5vw, 2.5rem);
+            font-size: clamp(1.9rem, 5.5vw, 2.6rem);
             color: var(--accent-color);
             text-align: center;
-            margin-bottom: clamp(25px, 6vw, 40px);
+            margin-bottom: clamp(28px, 7vw, 45px);
             font-weight: 700;
         }
 
@@ -228,7 +227,7 @@
         }
 
         #biografia p {
-            font-size: clamp(1.05rem, 3vw, 1.25rem);
+            font-size: clamp(1.08rem, 3.2vw, 1.28rem);
             line-height: 1.85;
             text-align: justify;
         }
@@ -240,24 +239,50 @@
         #epikoinonia a {
             color: var(--accent-color);
             font-weight: 600;
-            font-size: clamp(1.1rem, 3vw, 1.25rem);
+            font-size: clamp(1.1rem, 3.2vw, 1.28rem);
             text-decoration: none;
+            word-break: break-all;
         }
 
         footer {
             text-align: center;
-            padding: clamp(30px, 8vw, 50px);
+            padding: clamp(35px, 9vw, 55px) clamp(25px, 6vw, 40px);
             border-top: 2px solid var(--border-color);
             font-style: italic;
             color: #6b4423;
-            font-size: clamp(0.95rem, 2.5vw, 1.05rem);
+            font-size: clamp(0.95rem, 2.8vw, 1.08rem);
+            line-height: 1.6;
         }
 
+        /* MOBILE SPECIFIC */
+        @media (max-width: 480px) {
+            .story-card-content {
+                padding: 35px 22px 25px;
+            }
+            
+            nav a {
+                padding: 14px 18px;
+            }
+        }
+
+        /* PRINT */
         @media print {
-            body { background: white; }
-            .container { box-shadow: none; border: none; }
-            nav { display: none; }
-            .read-more { display: none; }
+            body { 
+                background: white; 
+            }
+            
+            .container { 
+                box-shadow: none; 
+                border: none; 
+            }
+            
+            nav { 
+                display: none; 
+            }
+            
+            .read-more { 
+                display: none; 
+            }
         }
     </style>
 </head>
@@ -277,17 +302,21 @@
         <section id="diegimata">
             <div class="stories-grid">
                 <div class="story-card" onclick="window.location.href='ta-smyrdakia.html'">
-                    <h2>Τα Σμυρδάκια</h2>
-                    <p class="excerpt">Εδώ και χρόνια ζω μακριά από τα μέρη όπου γεννήθηκα, μα η απόσταση, όπως αποδείχτηκε, δεν ήταν παρά μια ψευδαίσθηση...</p>
-                    <p class="meta">Γοτθικό τρόμου | 15 λεπτά</p>
-                    <a href="ta-smyrdakia.html" class="read-more">Διάβασε τώρα →</a>
+                    <div class="story-card-content">
+                        <h2>Τα Σμυρδάκια</h2>
+                        <p class="excerpt">Εδώ και χρόνια ζω μακριά από τα μέρη όπου γεννήθηκα, μα η απόσταση, όπως αποδείχτηκε, δεν ήταν παρά μια ψευδαίσθηση...</p>
+                        <p class="meta">Γοτθικό τρόμου | 15 λεπτά</p>
+                        <a href="ta-smyrdakia.html" class="read-more">Διάβασε τώρα →</a>
+                    </div>
                 </div>
 
                 <div class="story-card" onclick="window.location.href='to-xeri-kato-apo-to-xoma.html'">
-                    <h2>Το Χέρι Κάτω από το Χώμα</h2>
-                    <p class="excerpt">Στο βάθος του χειμώνα, εκείνες τις νύχτες που ο βοριάς ξεσπάει με μανία, οι άνθρωποι μαζεύονται γύρω από τη φωτιά...</p>
-                    <p class="meta">Γοτθικό τρόμου | 20 λεπτά</p>
-                    <a href="to-xeri-kato-apo-to-xoma.html" class="read-more">Διάβασε τώρα →</a>
+                    <div class="story-card-content">
+                        <h2>Το Χέρι Κάτω από το Χώμα</h2>
+                        <p class="excerpt">Στο βάθος του χειμώνα, εκείνες τις νύχτες που ο βοριάς ξεσπάει με μανία, οι άνθρωποι μαζεύονται γύρω από τη φωτιά...</p>
+                        <p class="meta">Γοτθικό τρόμου | 20 λεπτά</p>
+                        <a href="to-xeri-kato-apo-to-xoma.html" class="read-more">Διάβασε τώρα →</a>
+                    </div>
                 </div>
             </div>
         </section>
