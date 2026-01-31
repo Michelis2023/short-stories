@@ -127,26 +127,23 @@
             background: rgba(255,255,255,0.9);
             border: 2px solid rgba(107,68,35,0.25);
             border-radius: 16px;
+            padding: clamp(25px, 7vw, 35px);
+            margin-top: 8px;
             transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
             cursor: pointer;
             position: relative;
-            overflow: visible;
             box-shadow: 0 8px 32px rgba(0,0,0,0.1);
         }
 
         .story-card::before {
             content: '';
             position: absolute;
-            top: 0;
+            top: -8px;
             left: 0;
             right: 0;
             height: 4px;
             background: linear-gradient(90deg, var(--accent-color), #a52a2a, var(--accent-color));
             border-radius: 16px 16px 0 0;
-        }
-
-        .story-card-content {
-            padding: clamp(30px, 8vw, 40px) clamp(25px, 7vw, 35px) clamp(25px, 7vw, 35px);
         }
 
         .story-card:hover {
@@ -254,17 +251,6 @@
             line-height: 1.6;
         }
 
-        /* MOBILE SPECIFIC */
-        @media (max-width: 480px) {
-            .story-card-content {
-                padding: 35px 22px 25px;
-            }
-            
-            nav a {
-                padding: 14px 18px;
-            }
-        }
-
         /* PRINT */
         @media print {
             body { 
@@ -302,21 +288,17 @@
         <section id="diegimata">
             <div class="stories-grid">
                 <div class="story-card" onclick="window.location.href='ta-smyrdakia.html'">
-                    <div class="story-card-content">
-                        <h2>Τα Σμυρδάκια</h2>
-                        <p class="excerpt">Εδώ και χρόνια ζω μακριά από τα μέρη όπου γεννήθηκα, μα η απόσταση, όπως αποδείχτηκε, δεν ήταν παρά μια ψευδαίσθηση...</p>
-                        <p class="meta">Γοτθικό τρόμου | 15 λεπτά</p>
-                        <a href="ta-smyrdakia.html" class="read-more">Διάβασε τώρα →</a>
-                    </div>
+                    <h2>Τα Σμυρδάκια</h2>
+                    <p class="excerpt">Εδώ και χρόνια ζω μακριά από τα μέρη όπου γεννήθηκα, μα η απόσταση, όπως αποδείχτηκε, δεν ήταν παρά μια ψευδαίσθηση...</p>
+                    <p class="meta">Γοτθικό τρόμου | 15 λεπτά</p>
+                    <a href="ta-smyrdakia.html" class="read-more">Διάβασε τώρα →</a>
                 </div>
 
                 <div class="story-card" onclick="window.location.href='to-xeri-kato-apo-to-xoma.html'">
-                    <div class="story-card-content">
-                        <h2>Το Χέρι Κάτω από το Χώμα</h2>
-                        <p class="excerpt">Στο βάθος του χειμώνα, εκείνες τις νύχτες που ο βοριάς ξεσπάει με μανία, οι άνθρωποι μαζεύονται γύρω από τη φωτιά...</p>
-                        <p class="meta">Γοτθικό τρόμου | 20 λεπτά</p>
-                        <a href="to-xeri-kato-apo-to-xoma.html" class="read-more">Διάβασε τώρα →</a>
-                    </div>
+                    <h2>Το Χέρι Κάτω από το Χώμα</h2>
+                    <p class="excerpt">Στο βάθος του χειμώνα, εκείνες τις νύχτες που ο βοριάς ξεσπάει με μανία, οι άνθρωποι μαζεύονται γύρω από τη φωτιά...</p>
+                    <p class="meta">Γοτθικό τρόμου | 20 λεπτά</p>
+                    <a href="to-xeri-kato-apo-to-xoma.html" class="read-more">Διάβασε τώρα →</a>
                 </div>
             </div>
         </section>
