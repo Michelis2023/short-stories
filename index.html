@@ -4,215 +4,280 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Μιχαήλ Σ. Μιχαλακόπουλος | Διηγήματα</title>
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=EB+Garamond:ital@0;1&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=EB+Garamond:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
     <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
         
         :root {
             --ink: #2c1810;
             --blood: #8b0000;
             --parchment: #fdf4e5;
-            --shadow-dark: rgba(0,0,0,0.3);
+            --shadow: rgba(0,0,0,0.3);
         }
 
         body {
             background: linear-gradient(135deg, #1a0f0a 0%, #2d2013 100%);
             font-family: 'EB Garamond', serif;
             color: var(--ink);
-            line-height: 1.75;
-            padding: 2rem 0;
+            line-height: 1.7;
+            padding: 1rem 0;
         }
 
-        .book {
-            max-width: 800px;
+        .container {
+            max-width: 900px;
             margin: 0 auto;
             background: var(--parchment);
-            box-shadow: 0 0 80px var(--shadow-dark);
+            box-shadow: 0 0 60px var(--shadow);
             position: relative;
+            overflow: hidden;
         }
 
-        .book::before {
+        .container::before {
             content: '';
             position: absolute;
             top: 0;
             left: 0;
             right: 0;
-            height: 8px;
+            height: 6px;
             background: linear-gradient(90deg, var(--blood), #a52a2a, var(--blood));
         }
 
         /* HEADER */
         header {
             text-align: center;
-            padding: 4rem 3rem 2rem;
-            border-bottom: 3px solid var(--blood);
+            padding: 3rem 1.5rem 2rem;
+            border-bottom: 2px solid var(--blood);
         }
 
         h1 {
             font-family: 'Cinzel', serif;
-            font-size: clamp(2.8rem, 8vw, 5rem);
+            font-size: clamp(2rem, 6vw, 3.5rem);
             color: var(--blood);
-            letter-spacing: 0.05em;
-            margin-bottom: 1rem;
-            text-shadow: 3px 3px 6px rgba(0,0,0,0.3);
+            letter-spacing: 0.02em;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+            word-wrap: break-word;
         }
 
-        /* NAV */
+        /* NAVIGATION */
         nav {
             background: var(--blood);
-            padding: 1.5rem;
-            text-align: center;
+            padding: 0.5rem;
         }
 
         nav a {
-            color: #fff;
-            text-decoration: none;
             display: block;
-            padding: 1rem 2rem;
-            font-size: 1.3rem;
-            font-weight: 500;
-            transition: all 0.3s;
+            color: white;
+            text-decoration: none;
+            padding: 1rem;
+            font-size: 1.2rem;
+            text-align: center;
+            transition: background 0.3s;
         }
 
         nav a:hover {
-            background: rgba(255,255,255,0.2);
-            transform: scale(1.05);
+            background: rgba(255,255,255,0.15);
         }
 
-        /* CONTENT */
+        /* MAIN CONTENT */
         main {
-            padding: 4rem 3rem;
+            padding: 2.5rem 1.5rem;
         }
 
-        /* ΓΟΤΘΙΚΕΣ ΚΑΡΤΕΣ */
         .stories {
             display: flex;
             flex-direction: column;
-            gap: 4rem;
+            gap: 3rem;
         }
 
-        .chapter {
-            background: rgba(255,255,255,0.7);
+        /* ΚΑΡΤΕΣ - ΤΕΛΕΙΑ RESPONSIVE */
+        .story {
+            background: rgba(255,255,255,0.6);
             border: 2px solid #d4c4a8;
-            padding: 3.5rem 3rem;
-            position: relative;
             border-radius: 8px;
-            box-shadow: inset 0 0 40px rgba(0,0,0,0.05);
+            padding: 2rem 1.5rem;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+            overflow: hidden;
         }
 
-        .chapter h2 {
+        .story h2 {
             font-family: 'Cinzel', serif;
-            font-size: clamp(2.2rem, 6vw, 3.5rem);
+            font-size: clamp(1.6rem, 5vw, 2.5rem);
             color: var(--blood);
-            margin-bottom: 2rem;
+            margin-bottom: 1rem;
             text-align: center;
-            letter-spacing: 0.03em;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+            line-height: 1.3;
+            word-wrap: break-word;
+            hyphens: auto;
         }
 
         .author {
             text-align: center;
             font-style: italic;
             color: #6b4c2f;
-            margin-bottom: 3rem;
-            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            font-size: 1.1rem;
         }
 
-        /* DROP CAPS - Όπως screenshots! */
-        .drop-cap:first-letter {
+        /* DROP CAP - ΣΩΣΤΟ */
+        .text::first-letter {
             font-family: 'Cinzel', serif;
-            font-size: clamp(4rem, 12vw, 6.5rem);
+            font-size: 4rem;
             font-weight: 700;
             float: left;
-            line-height: 0.75;
-            margin: 0.2rem 0.3rem 0 0;
+            line-height: 0.8;
+            margin: 0.1rem 0.5rem 0 0;
             color: var(--blood);
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
         }
 
-        .excerpt {
-            font-size: 1.25rem;
-            line-height: 1.85;
-            margin-bottom: 2.5rem;
+        .text {
+            font-size: 1.15rem;
+            line-height: 1.8;
             text-align: justify;
-            column-count: 1;
-        }
-
-        @media (min-width: 768px) {
-            .excerpt {
-                column-count: 2;
-                column-gap: 3rem;
-            }
+            margin-bottom: 1.5rem;
+            word-wrap: break-word;
+            overflow-wrap: break-word;
         }
 
         .meta {
             text-align: center;
-            color: #6b4c2f;
+            color: #8b7355;
             font-style: italic;
-            font-size: 1.15rem;
-            margin-bottom: 3rem;
+            font-size: 1rem;
+            margin: 1.5rem 0;
+            padding-top: 1rem;
             border-top: 1px solid #d4c4a8;
-            padding-top: 2rem;
         }
 
-        /* ΓΟΤΘΙΚΟ ΚΟΥΜΠΙ */
-        .read-link {
+        /* ΚΟΥΜΠΙ */
+        .btn {
             display: block;
             text-align: center;
             color: var(--blood);
             text-decoration: none;
             font-family: 'Cinzel', serif;
-            font-size: 1.4rem;
+            font-size: 1.2rem;
             font-weight: 700;
-            padding: 1.5rem;
+            padding: 1.2rem;
             border: 2px solid var(--blood);
             background: linear-gradient(135deg, rgba(139,0,0,0.05), transparent);
-            transition: all 0.4s;
+            transition: all 0.3s;
             text-transform: uppercase;
-            letter-spacing: 0.1em;
+            letter-spacing: 0.05em;
+            margin-top: 1rem;
         }
 
-        .read-link:hover {
+        .btn:hover {
             background: var(--blood);
             color: white;
-            transform: scale(1.05);
-            box-shadow: 0 10px 30px rgba(139,0,0,0.4);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(139,0,0,0.3);
         }
 
         /* SECTIONS */
         .section {
-            margin: 5rem 0;
-            padding: 3rem;
-            background: rgba(212,196,168,0.3);
-            border-left: 6px solid var(--blood);
+            margin: 3rem 0;
+            padding: 2.5rem 1.5rem;
+            background: rgba(212,196,168,0.25);
+            border-left: 5px solid var(--blood);
+            border-radius: 4px;
         }
 
         .section h2 {
             font-family: 'Cinzel', serif;
-            font-size: clamp(2.5rem, 7vw, 4rem);
+            font-size: clamp(1.8rem, 5vw, 2.8rem);
             color: var(--blood);
             text-align: center;
-            margin-bottom: 2rem;
+            margin-bottom: 1.5rem;
+            word-wrap: break-word;
         }
 
+        .section p {
+            font-size: 1.15rem;
+            line-height: 1.75;
+            text-align: justify;
+        }
+
+        .email {
+            text-align: center;
+            font-size: 1.2rem;
+        }
+
+        .email a {
+            color: var(--blood);
+            font-weight: 600;
+            text-decoration: none;
+            word-break: break-all;
+        }
+
+        /* FOOTER */
         footer {
             text-align: center;
-            padding: 4rem 3rem 3rem;
-            border-top: 3px solid var(--blood);
+            padding: 2.5rem 1.5rem;
+            border-top: 2px solid var(--blood);
             color: #6b4c2f;
             font-style: italic;
+            font-size: 1rem;
         }
 
-        /* MOBILE */
-        @media (max-width: 768px) {
-            main { padding: 2.5rem 2rem; }
-            .chapter { padding: 2.5rem 2rem; }
-            .section { padding: 2rem 1.5rem; margin: 3rem 0; }
+        /* TABLET */
+        @media (min-width: 768px) {
+            body {
+                padding: 2rem 1rem;
+            }
+
+            main {
+                padding: 3.5rem 3rem;
+            }
+
+            .story {
+                padding: 3rem 2.5rem;
+            }
+
+            .text::first-letter {
+                font-size: 5rem;
+                margin-right: 0.6rem;
+            }
+        }
+
+        /* DESKTOP */
+        @media (min-width: 1024px) {
+            .story {
+                padding: 3.5rem 3rem;
+            }
+
+            .text::first-letter {
+                font-size: 6rem;
+            }
+        }
+
+        /* SMALL MOBILE FIX */
+        @media (max-width: 400px) {
+            h1 {
+                font-size: 1.6rem;
+            }
+
+            .story h2 {
+                font-size: 1.4rem;
+            }
+
+            .text::first-letter {
+                font-size: 3rem;
+                margin-right: 0.4rem;
+            }
+
+            nav a {
+                font-size: 1.1rem;
+                padding: 0.9rem;
+            }
         }
     </style>
 </head>
 <body>
-    <div class="book">
+    <div class="container">
         <header>
             <h1>Μιχαήλ Σ. Μιχαλακόπουλος</h1>
         </header>
@@ -225,39 +290,31 @@
 
         <main>
             <section id="stories" class="stories">
-                <article class="chapter">
+                <article class="story">
                     <h2>Τα Σμυρδάκια</h2>
                     <p class="author">Μιχαήλ Σωτηρίου Μιχαλακόπουλος</p>
-                    <div class="drop-cap">
-                        <p class="excerpt">Εδώ και χρόνια ζω μακριά από τα μέρη όπου γεννήθηκα, μα η απόσταση, όπως αποδείχτηκε, δεν ήταν παρά μια ψευδαίσθηση. Η παλιά γειτονιά, με τα στενά της και τις μυρωδιές της, ζωντάνεψε μέσα μου σαν να μην είχα φύγει ποτέ. Και τότε τα είδα ξανά - εκείνα τα πλάσματα που μικρός ονόμαζα «σμυρδάκια». Μικρά, σκουρόχρωμα, με μάτια που έλαμπαν σαν κάρβουνα στη νύχτα...</p>
-                    </div>
-                    <p class="meta">Γοτθικό Τρόμου • 15 λεπτά ανάγνωσης</p>
-                    <a href="ta-smyrdakia.html" class="read-link">Διάβασε το Διήγημα</a>
+                    <p class="text">Εδώ και χρόνια ζω μακριά από τα μέρη όπου γεννήθηκα, μα η απόσταση, όπως αποδείχτηκε, δεν ήταν παρά μια ψευδαίσθηση. Η παλιά γειτονιά, με τα στενά της και τις μυρωδιές της, ζωντάνεψε μέσα μου σαν να μην είχα φύγει ποτέ. Και τότε τα είδα ξανά - εκείνα τα πλάσματα που μικρός ονόμαζα «σμυρδάκια».</p>
+                    <p class="meta">Γοτθικό τρόμου | 15 λεπτά</p>
+                    <a href="ta-smyrdakia.html" class="btn">Διάβασε τώρα</a>
                 </article>
 
-                <article class="chapter">
+                <article class="story">
                     <h2>Το Χέρι Κάτω από το Χώμα</h2>
                     <p class="author">Μιχαήλ Σωτηρίου Μιχαλακόπουλος</p>
-                    <div class="drop-cap">
-                        <p class="excerpt">Στο βάθος του χειμώνα, εκείνες τις νύχτες που ο βοριάς ξεσπάει με μανία, οι άνθρωποι μαζεύονται γύρω από τη φωτιά και ψιθυρίζουν ιστορίες. Ιστορίες για το χέρι που βγαίνει από το χώμα, για τα ψίθυροι κάτω από τα δέντρα, για τα μάτια που σε κοιτάζουν από τα σκοτάδια...</p>
-                    </div>
-                    <p class="meta">Γοτθικό Τρόμου • 20 λεπτά ανάγνωσης</p>
-                    <a href="to-xeri-kato-apo-to-xoma.html" class="read-link">Διάβασε το Διήγημα</a>
+                    <p class="text">Στο βάθος του χειμώνα, εκείνες τις νύχτες που ο βοριάς ξεσπάει με μανία, οι άνθρωποι μαζεύονται γύρω από τη φωτιά και ψιθυρίζουν ιστορίες. Ιστορίες για το χέρι που βγαίνει από το χώμα, για τα ψίθυροι κάτω από τα δέντρα, για τα μάτια που σε κοιτάζουν από τα σκοτάδια.</p>
+                    <p class="meta">Γοτθικό τρόμου | 20 λεπτά</p>
+                    <a href="to-xeri-kato-apo-to-xoma.html" class="btn">Διάβασε τώρα</a>
                 </article>
             </section>
 
             <section id="bio" class="section">
                 <h2>Βιογραφικό</h2>
-                <p>Συγγραφέας και ερευνητής της νεοελληνικής λογοτεχνίας, ειδικευμένος στην ανάδειξη παραδοσιακών αφηγήσεων και λαϊκών μύθων. Τα έργα μου συνδυάζουν βιωματικές ιστορίες με γοτθικά στοιχεία, τιμώντας την πλούσια πολιτιστική κληρονομιά της Ελλάδας.</p>
+                <p>Συγγραφέας και ερευνητής της ελληνικής λογοτεχνίας, αφιερωμένος στην ανάδειξη των παραδοσιακών οικογενειακών αφηγήσεων, των λαϊκών μύθων και της αυθεντικής γλώσσας. Το έργο μου επικεντρώνεται στη διατήρηση και τη δημιουργική μεταγραφή βιωματικών ιστοριών.</p>
             </section>
 
-            <section id="contact" class="section">
+            <section id="contact" class="section email">
                 <h2>Επικοινωνία</h2>
-                <p style="font-size: 1.4rem; text-align: center;">
-                    <a href="mailto:michalakopoulosmichael@gmail.com" style="color: var(--blood); font-weight: bold; text-decoration: none;">
-                        michalakopoulosmichael@gmail.com
-                    </a>
-                </p>
+                <p><a href="mailto:michalakopoulosmichael@gmail.com">michalakopoulosmichael@gmail.com</a></p>
             </section>
         </main>
 
