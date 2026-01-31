@@ -2,15 +2,25 @@
 <html lang="el">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     <title>Μιχαήλ Σ. Μιχαλακόπουλος | Διηγήματα</title>
     <meta name="description" content="Συλλογή διηγημάτων εμπνευσμένων από την ελληνική λαογραφία και την παράδοση">
+    <meta name="theme-color" content="#8b0000">
+    <link rel="manifest" href="data:application/manifest+json,{
+        'name': 'Μιχαήλ Σ. Μιχαλακόπουλος',
+        'short_name': 'Διηγήματα',
+        'start_url': '/',
+        'display': 'standalone',
+        'background_color': '#f4f1ea',
+        'theme_color': '#8b0000',
+        'icons': [{'src': 'data:image/svg+xml;base64,...', 'sizes': '192x192', 'type': 'image/png'}]
+    }">
     <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,700;1,400&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
     
     <style>
         :root {
             --bg-color: #0d0d0d;
-            --paper-color: #f4f1ea;
+            --paper-color: #f8f6f0;
             --accent-color: #8b0000;
             --text-color: #2c2c2c;
             --border-color: #6b4423;
@@ -22,218 +32,247 @@
             padding: 0;
         }
 
+        html {
+            scroll-behavior: smooth;
+        }
+
         body {
-            background-color: var(--bg-color);
-            background-image: 
-                radial-gradient(circle at 20% 50%, rgba(139, 0, 0, 0.03) 0%, transparent 50%),
-                radial-gradient(circle at 80% 80%, rgba(139, 0, 0, 0.03) 0%, transparent 50%);
+            background: linear-gradient(135deg, var(--bg-color) 0%, #1a1a1a 100%);
             font-family: 'EB Garamond', serif;
             color: var(--text-color);
-            padding: 20px;
-            line-height: 1.6;
+            line-height: 1.65;
+            overflow-x: hidden;
         }
 
         .container {
-            max-width: 1000px;
+            max-width: 1200px;
             margin: 0 auto;
-            background-color: var(--paper-color);
-            padding: 60px 50px;
-            box-shadow: 0 0 60px rgba(0,0,0,0.9);
-            border: 3px double var(--border-color);
+            background: var(--paper-color);
+            min-height: 100vh;
+            box-shadow: 0 0 100px rgba(0,0,0,0.8);
+            border: 2px solid var(--border-color);
         }
 
+        /* HERO HEADER - Mobile Optimized */
         header {
             text-align: center;
-            border-bottom: 3px double var(--accent-color);
-            padding-bottom: 40px;
-            margin-bottom: 50px;
+            padding: clamp(40px, 12vw, 80px) clamp(20px, 8vw, 50px);
+            background: linear-gradient(135deg, rgba(139,0,0,0.05) 0%, transparent 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 30% 20%, rgba(139,0,0,0.1) 0%, transparent 70%);
+            pointer-events: none;
         }
 
         h1 {
             font-family: 'Playfair Display', serif;
-            font-size: clamp(2rem, 5vw, 3.2rem); /* Responsive sizing */
-            color: var(--accent-color);
-            letter-spacing: clamp(0.5px, 1.5vw, 4px);
-            margin-bottom: 15px;
-            text-transform: uppercase;
-            word-break: break-word; /* Κόβει λέξεις σωστά */
-            hyphens: auto;
-            line-height: 1.1;
-            max-width: 100%;
-            padding: 0 10px;
+            font-size: clamp(2.2rem, 8vw, 4rem);
+            background: linear-gradient(135deg, var(--accent-color), #a52a2a);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-weight: 700;
+            line-height: 1.05;
+            margin-bottom: clamp(15px, 4vw, 25px);
+            text-shadow: 0 2px 10px rgba(139,0,0,0.3);
+            position: relative;
+            z-index: 2;
         }
 
         .subtitle {
             font-style: italic;
-            font-size: clamp(1.1rem, 2.5vw, 1.3rem);
-            color: #555;
-            margin-top: 10px;
+            font-size: clamp(1.15rem, 4vw, 1.4rem);
+            color: #5a4a3a;
+            margin-top: clamp(10px, 3vw, 20px);
+            font-weight: 400;
+            position: relative;
+            z-index: 2;
         }
 
+        /* NAVIGATION - Mobile hamburger style */
         nav {
-            margin: 40px 0;
-            padding: 20px;
-            background: rgba(139, 0, 0, 0.05);
-            border-left: 4px solid var(--accent-color);
+            background: rgba(139,0,0,0.95);
+            backdrop-filter: blur(10px);
+            padding: clamp(15px, 5vw, 25px);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.2);
         }
 
         nav a {
-            display: inline-block;
-            margin: 0 20px;
-            color: var(--accent-color);
+            display: block;
+            margin: 8px 0;
+            color: white;
             text-decoration: none;
-            font-size: clamp(1rem, 2.5vw, 1.2rem);
+            font-size: clamp(1.1rem, 3.5vw, 1.25rem);
+            padding: 12px 20px;
+            border-radius: 8px;
             transition: all 0.3s;
+            font-weight: 500;
+            text-align: center;
         }
 
-        nav a:hover {
-            color: #000;
-            text-decoration: underline;
+        nav a:hover, nav a:focus {
+            background: rgba(255,255,255,0.2);
+            transform: scale(1.02);
         }
 
+        /* STORIES GRID - Perfect mobile */
         .stories-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-            margin: 40px 0;
+            display: flex;
+            flex-direction: column;
+            gap: clamp(25px, 6vw, 35px);
+            padding: clamp(30px, 8vw, 50px);
+            max-width: 800px;
+            margin: 0 auto;
         }
 
         .story-card {
-            background: rgba(255, 255, 255, 0.5);
-            border: 2px solid var(--border-color);
-            padding: 30px;
-            transition: all 0.3s;
+            background: rgba(255,255,255,0.85);
+            backdrop-filter: blur(10px);
+            border: 2px solid rgba(107,68,35,0.3);
+            padding: clamp(25px, 7vw, 35px);
+            border-radius: 16px;
+            transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
             cursor: pointer;
-            border-radius: 8px;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.1);
         }
 
-        .story-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
-            background: rgba(255, 255, 255, 0.8);
+        .story-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--accent-color), #a52a2a);
+        }
+
+        .story-card:hover, .story-card:focus-within {
+            transform: translateY(-12px) scale(1.02);
+            box-shadow: 0 20px 60px rgba(139,0,0,0.3);
+            border-color: var(--accent-color);
         }
 
         .story-card h2 {
             font-family: 'Playfair Display', serif;
-            font-size: clamp(1.4rem, 4vw, 1.8rem);
+            font-size: clamp(1.6rem, 5vw, 2.2rem);
             color: var(--accent-color);
-            margin-bottom: 15px;
-            line-height: 1.2;
+            margin-bottom: clamp(12px, 3vw, 20px);
+            line-height: 1.25;
+            font-weight: 700;
         }
 
         .story-card .excerpt {
-            font-size: 1.1rem;
-            line-height: 1.7;
+            font-size: clamp(1rem, 3vw, 1.15rem);
+            line-height: 1.75;
             color: var(--text-color);
-            margin-bottom: 15px;
+            margin-bottom: clamp(15px, 4vw, 25px);
         }
 
         .story-card .meta {
             font-style: italic;
-            font-size: 0.95rem;
-            color: #666;
-            margin-top: 15px;
+            font-size: clamp(0.9rem, 2.5vw, 1rem);
+            color: #6b4423;
+            margin-top: clamp(10px, 3vw, 20px);
+            font-weight: 500;
         }
 
         .read-more {
-            display: inline-block;
-            margin-top: 15px;
-            padding: 12px 28px;
-            background: var(--accent-color);
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: clamp(14px, 4vw, 18px) clamp(24px, 6vw, 32px);
+            background: linear-gradient(135deg, var(--accent-color), #7f1d1d);
             color: white;
             text-decoration: none;
-            font-size: 1rem;
+            font-size: clamp(1rem, 3vw, 1.1rem);
+            border-radius: 50px;
             transition: all 0.3s;
-            border-radius: 4px;
-            min-height: 44px; /* Touch-friendly */
-            display: flex;
-            align-items: center;
+            font-weight: 600;
+            box-shadow: 0 8px 25px rgba(139,0,0,0.4);
+            min-height: 52px;
             justify-content: center;
         }
 
-        .read-more:hover {
-            background: #000;
+        .read-more:hover, .read-more:focus {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(139,0,0,0.6);
+            background: linear-gradient(135deg, #7f1d1d, var(--accent-color));
+        }
+
+        /* SECTIONS */
+        section {
+            padding: clamp(40px, 10vw, 60px) clamp(30px, 8vw, 50px);
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        section h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(1.8rem, 5vw, 2.5rem);
+            color: var(--accent-color);
+            text-align: center;
+            margin-bottom: clamp(25px, 6vw, 40px);
+            font-weight: 700;
+        }
+
+        #biografia {
+            background: linear-gradient(135deg, rgba(139,0,0,0.03) 0%, rgba(107,68,35,0.03) 100%);
+            border-radius: 20px;
+            margin: clamp(40px, 10vw, 60px) clamp(20px, 5vw, 40px);
+            border: 1px solid rgba(107,68,35,0.2);
+        }
+
+        #biografia p {
+            font-size: clamp(1.05rem, 3vw, 1.25rem);
+            line-height: 1.85;
+            text-align: justify;
+        }
+
+        #epikoinonia {
+            text-align: center;
+        }
+
+        #epikoinonia a {
+            color: var(--accent-color);
+            font-weight: 600;
+            font-size: clamp(1.1rem, 3vw, 1.25rem);
+            text-decoration: none;
         }
 
         footer {
             text-align: center;
-            margin-top: 60px;
-            padding-top: 30px;
+            padding: clamp(30px, 8vw, 50px);
             border-top: 2px solid var(--border-color);
             font-style: italic;
-            color: #777;
+            color: #6b4423;
+            font-size: clamp(0.95rem, 2.5vw, 1.05rem);
         }
 
-        /* MOBILE OPTIMIZATIONS */
-        @media (max-width: 768px) {
-            body {
-                padding: 10px;
-            }
-            
-            .container {
-                padding: 40px 25px;
-                margin: 0 10px;
-            }
-            
-            nav {
-                padding: 15px;
-                margin: 30px 0;
-            }
-            
-            nav a {
-                display: block;
-                margin: 10px 0;
-                text-align: center;
-            }
-            
-            .stories-grid {
-                grid-template-columns: 1fr;
-                gap: 25px;
-                margin: 30px 0;
-            }
-            
-            .story-card {
-                padding: 25px 20px;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .container {
-                padding: 30px 20px;
-            }
-            
-            h1 {
-                padding: 0 5px;
-                font-weight: 700;
-            }
-            
-            .story-card {
-                padding: 20px 15px;
-            }
-            
-            .read-more {
-                padding: 14px 20px;
-                font-size: 1rem;
-            }
+        /* PWA & PERFORMANCE */
+        @media (display-mode: standalone) {
+            body { background: var(--paper-color); }
         }
 
         /* PRINT */
         @media print {
-            body {
-                background: white;
-                padding: 0;
-            }
-            
-            .container {
-                box-shadow: none;
-                border: 1px solid #000;
-                max-width: 100%;
-                padding: 40px;
-            }
-            
-            nav {
-                display: none;
-            }
+            body { background: white; color: black; }
+            .container { box-shadow: none; border: none; }
+            nav { display: none; }
+            .read-more { display: none; }
         }
     </style>
 </head>
@@ -245,7 +284,6 @@
         </header>
 
         <nav>
-            <a href="index.html">Αρχική</a>
             <a href="#diegimata">Διηγήματα</a>
             <a href="#biografia">Βιογραφικό</a>
             <a href="#epikoinonia">Επικοινωνία</a>
@@ -253,42 +291,30 @@
 
         <section id="diegimata">
             <div class="stories-grid">
-                
-                <!-- 1ο Διήγημα: Τα Σμυρδάκια -->
                 <div class="story-card" onclick="window.location.href='ta-smyrdakia.html'">
                     <h2>Τα Σμυρδάκια</h2>
-                    <p class="excerpt">
-                        Εδώ και χρόνια ζω μακριά από τα μέρη όπου γεννήθηκα, μα η απόσταση, όπως αποδείχτηκε, δεν ήταν παρά μια ψευδαίσθηση. Τις νύχτες του χειμώνα, όταν ο βοριάς χτυπά τα παραθυρόφυλλα...
-                    </p>
-                    <p class="meta">Γοτθικό τρόμου | 15 λεπτά ανάγνωση</p>
-                    <a href="ta-smyrdakia.html" class="read-more">Διαβάστε →</a>
+                    <p class="excerpt">Εδώ και χρόνια ζω μακριά από τα μέρη όπου γεννήθηκα, μα η απόσταση, όπως αποδείχτηκε, δεν ήταν παρά μια ψευδαίσθηση...</p>
+                    <p class="meta">Γοτθικό τρόμου | 15 λεπτά</p>
+                    <a href="ta-smyrdakia.html" class="read-more">Διάβασε τώρα →</a>
                 </div>
 
-                <!-- 2ο Διήγημα: Το Χέρι Κάτω από το Χώμα -->
                 <div class="story-card" onclick="window.location.href='to-xeri-kato-apo-to-xoma.html'">
                     <h2>Το Χέρι Κάτω από το Χώμα</h2>
-                    <p class="excerpt">
-                        Στο βάθος του χειμώνα, εκείνες τις νύχτες που ο βοριάς ξεσπάει με μανία, οι άνθρωποι μαζεύονται γύρω από τη φωτιά και ψιθυρίζουν ιστορίες. Παλιές ιστορίες για πράγματα που δεν πρέπει να ειπωθούν δυνατά...
-                    </p>
-                    <p class="meta">Γοτθικό τρόμου | 20 λεπτά ανάγνωση</p>
-                    <a href="to-xeri-kato-apo-to-xoma.html" class="read-more">Διαβάστε →</a>
+                    <p class="excerpt">Στο βάθος του χειμώνα, εκείνες τις νύχτες που ο βοριάς ξεσπάει με μανία, οι άνθρωποι μαζεύονται γύρω από τη φωτιά...</p>
+                    <p class="meta">Γοτθικό τρόμου | 20 λεπτά</p>
+                    <a href="to-xeri-kato-apo-to-xoma.html" class="read-more">Διάβασε τώρα →</a>
                 </div>
-
             </div>
         </section>
 
-        <section id="biografia" style="margin-top: 60px; padding: 30px; background: rgba(139,0,0,0.05); border-left: 4px solid var(--accent-color); border-radius: 8px;">
-            <h2 style="font-family: 'Playfair Display', serif; font-size: clamp(1.6rem, 4vw, 2rem); color: var(--accent-color); margin-bottom: 20px;">Βιογραφικό</h2>
-            <p style="font-size: clamp(1rem, 2.5vw, 1.2rem); line-height: 1.8;">
-                Συγγραφέας και ερευνητής της ελληνικής λογοτεχνίας, αφιερωμένος στην ανάδειξη των παραδοσιακών οικογενειακών αφηγήσεων, των λαϊκών μύθων και της αυθεντικής γλώσσας. Το έργο μου επικεντρώνεται στη διατήρηση και τη δημιουργική μεταγραφή βιωματικών ιστοριών.
-            </p>
+        <section id="biografia">
+            <h2>Βιογραφικό</h2>
+            <p>Συγγραφέας και ερευνητής της ελληνικής λογοτεχνίας, αφιερωμένος στην ανάδειξη των παραδοσιακών οικογενειακών αφηγήσεων, των λαϊκών μύθων και της αυθεντικής γλώσσας. Το έργο μου επικεντρώνεται στη διατήρηση και τη δημιουργική μεταγραφή βιωματικών ιστοριών, αντλώντας έμπνευση από μνήμες της ελληνικής οικογένειας, ιστορικά γεγονότα και την πλούσια πολιτιστική μας κληρονομιά.</p>
         </section>
 
-        <section id="epikoinonia" style="margin-top: 40px; text-align: center;">
-            <h2 style="font-family: 'Playfair Display', serif; font-size: clamp(1.6rem, 4vw, 2rem); color: var(--accent-color); margin-bottom: 20px;">Επικοινωνία</h2>
-            <p style="font-size: clamp(1.1rem, 2.5vw, 1.2rem);">
-                Email: <a href="mailto:michalakopoulosmichael@gmail.com" style="color: var(--accent-color); font-weight: 600;">michalakopoulosmichael@gmail.com</a>
-            </p>
+        <section id="epikoinonia">
+            <h2>Επικοινωνία</h2>
+            <p>Email: <a href="mailto:michalakopoulosmichael@gmail.com">michalakopoulosmichael@gmail.com</a></p>
         </section>
 
         <footer>
