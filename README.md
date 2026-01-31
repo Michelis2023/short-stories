@@ -5,8 +5,7 @@
 [![Genre: Gothic Horror](https://img.shields.io/badge/Genre-Gothic%20Horror-red?style=for-the-badge)](https://en.wikipedia.org/wiki/Gothic_fiction)
 [![Live Site](https://img.shields.io/badge/Live%20Site-GitHub%20Pages-brightgreen?style=for-the-badge)](https://michelis2023.github.io/short-stories/)
 
-> *Διηγήματα εμπνευσμένα από την ελληνική λαογραφία και γοθικές ιστορίες*
-
+> Διηγήματα εμπνευσμένα από την ελληνική λαογραφία και Γοτθικές ιστορίες
 ---
 
 ## 📚 Διαθέσιμα Διηγήματα
