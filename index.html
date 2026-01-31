@@ -30,6 +30,7 @@
             font-family: 'EB Garamond', serif;
             color: var(--text-color);
             padding: 20px;
+            line-height: 1.6;
         }
 
         .container {
@@ -50,16 +51,21 @@
 
         h1 {
             font-family: 'Playfair Display', serif;
-            font-size: 3rem;
+            font-size: clamp(2rem, 5vw, 3.2rem); /* Responsive sizing */
             color: var(--accent-color);
-            letter-spacing: 4px;
+            letter-spacing: clamp(0.5px, 1.5vw, 4px);
             margin-bottom: 15px;
             text-transform: uppercase;
+            word-break: break-word; /* Κόβει λέξεις σωστά */
+            hyphens: auto;
+            line-height: 1.1;
+            max-width: 100%;
+            padding: 0 10px;
         }
 
         .subtitle {
             font-style: italic;
-            font-size: 1.3rem;
+            font-size: clamp(1.1rem, 2.5vw, 1.3rem);
             color: #555;
             margin-top: 10px;
         }
@@ -76,7 +82,7 @@
             margin: 0 20px;
             color: var(--accent-color);
             text-decoration: none;
-            font-size: 1.2rem;
+            font-size: clamp(1rem, 2.5vw, 1.2rem);
             transition: all 0.3s;
         }
 
@@ -98,6 +104,7 @@
             padding: 30px;
             transition: all 0.3s;
             cursor: pointer;
+            border-radius: 8px;
         }
 
         .story-card:hover {
@@ -108,9 +115,10 @@
 
         .story-card h2 {
             font-family: 'Playfair Display', serif;
-            font-size: 1.8rem;
+            font-size: clamp(1.4rem, 4vw, 1.8rem);
             color: var(--accent-color);
             margin-bottom: 15px;
+            line-height: 1.2;
         }
 
         .story-card .excerpt {
@@ -130,12 +138,17 @@
         .read-more {
             display: inline-block;
             margin-top: 15px;
-            padding: 10px 25px;
+            padding: 12px 28px;
             background: var(--accent-color);
             color: white;
             text-decoration: none;
             font-size: 1rem;
             transition: all 0.3s;
+            border-radius: 4px;
+            min-height: 44px; /* Touch-friendly */
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
 
         .read-more:hover {
@@ -151,22 +164,75 @@
             color: #777;
         }
 
+        /* MOBILE OPTIMIZATIONS */
         @media (max-width: 768px) {
-            .container {
-                padding: 40px 30px;
+            body {
+                padding: 10px;
             }
             
-            h1 {
-                font-size: 2rem;
+            .container {
+                padding: 40px 25px;
+                margin: 0 10px;
+            }
+            
+            nav {
+                padding: 15px;
+                margin: 30px 0;
             }
             
             nav a {
                 display: block;
                 margin: 10px 0;
+                text-align: center;
             }
             
             .stories-grid {
                 grid-template-columns: 1fr;
+                gap: 25px;
+                margin: 30px 0;
+            }
+            
+            .story-card {
+                padding: 25px 20px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 30px 20px;
+            }
+            
+            h1 {
+                padding: 0 5px;
+                font-weight: 700;
+            }
+            
+            .story-card {
+                padding: 20px 15px;
+            }
+            
+            .read-more {
+                padding: 14px 20px;
+                font-size: 1rem;
+            }
+        }
+
+        /* PRINT */
+        @media print {
+            body {
+                background: white;
+                padding: 0;
+            }
+            
+            .container {
+                box-shadow: none;
+                border: 1px solid #000;
+                max-width: 100%;
+                padding: 40px;
+            }
+            
+            nav {
+                display: none;
             }
         }
     </style>
@@ -195,7 +261,7 @@
                         Εδώ και χρόνια ζω μακριά από τα μέρη όπου γεννήθηκα, μα η απόσταση, όπως αποδείχτηκε, δεν ήταν παρά μια ψευδαίσθηση. Τις νύχτες του χειμώνα, όταν ο βοριάς χτυπά τα παραθυρόφυλλα...
                     </p>
                     <p class="meta">Γοτθικό τρόμου | 15 λεπτά ανάγνωση</p>
-                    <a href="ta-smyrdakia.html" class="read-more">Διαβάστε το διήγημα →</a>
+                    <a href="ta-smyrdakia.html" class="read-more">Διαβάστε →</a>
                 </div>
 
                 <!-- 2ο Διήγημα: Το Χέρι Κάτω από το Χώμα -->
@@ -205,32 +271,23 @@
                         Στο βάθος του χειμώνα, εκείνες τις νύχτες που ο βοριάς ξεσπάει με μανία, οι άνθρωποι μαζεύονται γύρω από τη φωτιά και ψιθυρίζουν ιστορίες. Παλιές ιστορίες για πράγματα που δεν πρέπει να ειπωθούν δυνατά...
                     </p>
                     <p class="meta">Γοτθικό τρόμου | 20 λεπτά ανάγνωση</p>
-                    <a href="to-xeri-kato-apo-to-xoma.html" class="read-more">Διαβάστε το διήγημα →</a>
-                </div>
-
-                <!-- 3ο Διήγημα: Προσεχώς -->
-                <div class="story-card">
-                    <h2>Σύντομα: Νέο Διήγημα</h2>
-                    <p class="excerpt">
-                        Έρχεται σύντομα νέο διήγημα...
-                    </p>
-                    <p class="meta">Υπό κατασκευή</p>
+                    <a href="to-xeri-kato-apo-to-xoma.html" class="read-more">Διαβάστε →</a>
                 </div>
 
             </div>
         </section>
 
-        <section id="biografia" style="margin-top: 60px; padding: 30px; background: rgba(139,0,0,0.05); border-left: 4px solid var(--accent-color);">
-            <h2 style="font-family: 'Playfair Display', serif; font-size: 2rem; color: var(--accent-color); margin-bottom: 20px;">Βιογραφικό</h2>
-            <p style="font-size: 1.2rem; line-height: 1.8;">
+        <section id="biografia" style="margin-top: 60px; padding: 30px; background: rgba(139,0,0,0.05); border-left: 4px solid var(--accent-color); border-radius: 8px;">
+            <h2 style="font-family: 'Playfair Display', serif; font-size: clamp(1.6rem, 4vw, 2rem); color: var(--accent-color); margin-bottom: 20px;">Βιογραφικό</h2>
+            <p style="font-size: clamp(1rem, 2.5vw, 1.2rem); line-height: 1.8;">
                 Συγγραφέας και ερευνητής της ελληνικής λογοτεχνίας, αφιερωμένος στην ανάδειξη των παραδοσιακών οικογενειακών αφηγήσεων, των λαϊκών μύθων και της αυθεντικής γλώσσας. Το έργο μου επικεντρώνεται στη διατήρηση και τη δημιουργική μεταγραφή βιωματικών ιστοριών.
             </p>
         </section>
 
         <section id="epikoinonia" style="margin-top: 40px; text-align: center;">
-            <h2 style="font-family: 'Playfair Display', serif; font-size: 2rem; color: var(--accent-color); margin-bottom: 20px;">Επικοινωνία</h2>
-            <p style="font-size: 1.2rem;">
-                Email: <a href="mailto:michalakopoulosmichael@gmail.com" style="color: var(--accent-color);">michalakopoulosmichael@gmail.com</a>
+            <h2 style="font-family: 'Playfair Display', serif; font-size: clamp(1.6rem, 4vw, 2rem); color: var(--accent-color); margin-bottom: 20px;">Επικοινωνία</h2>
+            <p style="font-size: clamp(1.1rem, 2.5vw, 1.2rem);">
+                Email: <a href="mailto:michalakopoulosmichael@gmail.com" style="color: var(--accent-color); font-weight: 600;">michalakopoulosmichael@gmail.com</a>
             </p>
         </section>
 
