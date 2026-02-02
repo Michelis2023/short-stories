@@ -104,12 +104,29 @@
             hyphens: auto;
             position: relative;
         }
+        article::first-letter {
+            float: left;
+            font-size: 5.5rem;
+            line-height: 0.85;
+            padding-right: 12px;
+            padding-top: 8px;
+            color: var(--accent-color);
+            font-family: 'Playfair Display', serif;
+            font-weight: bold;
+        }
         p {
             margin-bottom: 1.8rem;
             text-indent: 2rem;
         }
         p:first-of-type {
             text-indent: 0;
+        }
+        .divider {
+            text-align: center;
+            margin: 50px 0;
+            font-size: 1.8rem;
+            color: var(--accent-color);
+            letter-spacing: 10px;
         }
         footer {
             margin-top: 60px;
@@ -121,21 +138,26 @@
             padding-top: 30px;
             font-style: italic;
         }
+        @media (max-width: 768px) {
+            .story-container {
+                padding: 50px 40px;
+                margin: 20px auto;
+            }
+            h1 { font-size: 2.5rem; letter-spacing: 3px; }
+            article { font-size: 1.3rem; }
+        }
     </style>
 </head>
 <body>
     <div class="story-container">
         <a href="/short-stories/index.html" class="back-link">← Επιστροφή στην αρχική</a>
-        
         <header>
             <h1>Οι Φωνές Κάτω από το Χώμα</h1>
             <div class="author">Μιχαήλ Σωτηρίου Μιχαλακόπουλος</div>
         </header>
-        
         <article>
             <p>, , . , , . , , . . , , , . , , . , , . . . . . , , . , , , . , , . , , . , , , . . . , , ... , , , . . . . , . , . , , . , , ... , , . . , , . , . , . , . , . , . , . , , 28 1934. . ... , . . . , . . . , , . , . , . . . . , . , . . , , . . , . . . . ... . , , , . , , . , , , . , . . . , . , . , . , . . . , , . , . , . , . , . , . , . , , , . . . ... . , . , . . . , . . ! . , . , . . , , . , . , . . . ! ! ! . . , . . . . . . . , . . . . . , ... . . . . . . ! ! ! . , . . . , , . , , , . . , . . , . ... , . , . , . , . . , , . , , . , . . , , . , . , , ... , . . , . , . . . , . . , , . . . , . . , . . . . 1930. , , , . , .. , , , , . , , --- ,</p>
         </article>
-        
         <footer>
             <p>© 2026 Μιχαήλ Σωτηρίου Μιχαλακόπουλος — Διατηρούνται όλα τα πνευματικά δικαιώματα</p>
         </footer>
