@@ -14,8 +14,8 @@
 | # | Τίτλος | Περιγραφή | Διάβασε |
 |---|---|---|---|
 | 1 | **Τα Σμυρδάκια** | Γοτθικό διήγημα τρόμου | [🔗 Διάβασε](https://michelis2023.github.io/short-stories/ta-smyrdakia.html) |
-| 2 | **Το Χέρι Κάτω από το Χώμα** | Ιστορία υπερφυσικού φόβου | [🔗 Διάβασε](https://michelis2023.github.io/short-stories/to-zopheron-mystikon-tou-agiou-taxiarchi.html) |
-| 3 | **Το Ζοφερόν Μυστικόν του Αγίου Ταξιάρχη** | Ιστορία τρόμου και υπερφυσικού | [🔗 Διάβασε](https://michelis2023.github.io/short-stories/oi-phones-kato-apo-to-khoma.html) |
+| 2 | **Το Χέρι Κάτω από το Χώμα** | Ιστορία υπερφυσικού φόβου | [🔗 Διάβασε](https://michelis2023.github.io/short-stories/to-xeri-kato-apo-to-xoma.html) |
+| 3 | **Το Ζοφερόν Μυστικόν του Αγίου Ταξιάρχη** | Ιστορία τρόμου και υπερφυσικού | [🔗 Διάβασε](https://michelis2023.github.io/short-stories/to-zopheron-mystikon-tou-agiou-taxiarchi.html) |
 
 ---
 
@@ -32,8 +32,8 @@ Update README with new story and file structure
 short-stories/
 ├─ index.html
 ├─ ta-smyrdakia.html
-├─ to-zopheron-mystikon-tou-agiou-taxiarchi.html
-├─ oi-phones-kato-apo-to-khoma.html
+├─ to-xeri-kato-apo-to-xoma.html
+├─t o-zopheron-mystikon-tou-agiou-taxiarchi.html
 ├─ README.md
 └─ .github/workflows/ (GitHub Pages deployment)
 ```
