@@ -1,340 +1,139 @@
 <!DOCTYPE html>
 <html lang="el">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Τα Σμυρδάκια | Μιχαήλ Σωτηρίου Μιχαλακόπουλος</title>
-    <meta name="description" content="Ένα γοτθικό διήγημα τρόμου εμπνευσμένο από την ελληνική λαογραφία και το ύφος του Edgar Allan Poe.">
-    <meta name="author" content="Μιχαήλ Σωτηρίου Μιχαλακόπουλος">
-    
-    <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,700;1,400&family=Playfair+Display:ital,wght@0,700;1,700&display=swap" rel="stylesheet">
-
-    <style>
-        :root {
-            --bg-color: #0d0d0d;
-            --paper-color: #f4f1ea;
-            --accent-color: #8b0000;
-            --text-color: #2c2c2c;
-            --border-color: #6b4423;
-        }
-
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
-
-        body {
-            background-color: var(--bg-color);
-            background-image: 
-                radial-gradient(circle at 20% 50%, rgba(139, 0, 0, 0.03) 0%, transparent 50%),
-                radial-gradient(circle at 80% 80%, rgba(139, 0, 0, 0.03) 0%, transparent 50%);
-            margin: 0;
-            padding: 20px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            font-family: 'EB Garamond', serif;
-        }
-
-        .story-container {
-            background-color: var(--paper-color);
-            max-width: 800px;
-            width: 100%;
-            margin: 40px auto;
-            padding: 70px 60px;
-            box-shadow: 0 0 60px rgba(0,0,0,0.9), inset 0 0 100px rgba(139, 0, 0, 0.05);
-            border: 3px double var(--border-color);
-            position: relative;
-            background-image: 
-                url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><text y="50" font-size="100" opacity="0.015">✠</text></svg>'),
-                repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(107, 68, 35, 0.03) 2px, rgba(107, 68, 35, 0.03) 3px);
-        }
-
-        .story-container::before {
-            content: '';
-            position: absolute;
-            top: 20px;
-            left: 20px;
-            right: 20px;
-            bottom: 20px;
-            border: 1px solid var(--border-color);
-            pointer-events: none;
-            opacity: 0.3;
-        }
-
-        .back-link {
-            display: inline-block;
-            margin-bottom: 30px;
-            color: var(--accent-color);
-            text-decoration: none;
-            font-size: 1.2rem;
-            transition: all 0.3s;
-        }
-
-        .back-link:hover {
-            color: #000;
-            text-decoration: underline;
-        }
-
-        header {
-            text-align: center;
-            margin-bottom: 50px;
-            border-bottom: 3px double var(--accent-color);
-            padding-bottom: 30px;
-            position: relative;
-        }
-
-        h1 {
-            font-family: 'Playfair Display', serif;
-            font-size: 3.5rem;
-            color: var(--accent-color);
-            margin: 0 0 20px 0;
-            text-transform: uppercase;
-            letter-spacing: 6px;
-            font-weight: 700;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
-        }
-
-        .author {
-            font-family: 'EB Garamond', serif;
-            font-style: italic;
-            font-size: 1.3rem;
-            color: #555;
-            margin-top: 15px;
-            letter-spacing: 1px;
-        }
-
-        article {
-            font-family: 'EB Garamond', serif;
-            font-size: 1.4rem;
-            line-height: 1.9;
-            color: var(--text-color);
-            text-align: justify;
-            hyphens: auto;
-            position: relative;
-        }
-
-        article::first-letter {
-            float: left;
-            font-size: 5.5rem;
-            line-height: 0.85;
-            padding-right: 12px;
-            padding-top: 8px;
-            color: var(--accent-color);
-            font-family: 'Playfair Display', serif;
-            font-weight: bold;
-        }
-
-        p {
-            margin-bottom: 1.8rem;
-            text-indent: 2rem;
-        }
-
-        p:first-of-type {
-            text-indent: 0;
-        }
-
-        .divider {
-            text-align: center;
-            margin: 50px 0;
-            font-size: 1.8rem;
-            color: var(--accent-color);
-            letter-spacing: 10px;
-        }
-
-        footer {
-            margin-top: 60px;
-            text-align: center;
-            font-family: 'EB Garamond', serif;
-            font-size: 1rem;
-            color: #777;
-            border-top: 2px solid var(--border-color);
-            padding-top: 30px;
-            font-style: italic;
-        }
-
-        @media (max-width: 768px) {
-            .story-container {
-                padding: 50px 40px;
-                margin: 20px auto;
-            }
-            
-            h1 {
-                font-size: 2.5rem;
-                letter-spacing: 3px;
-            }
-            
-            article {
-                font-size: 1.3rem;
-            }
-        }
-
-        @media (max-width: 480px) {
-            body {
-                padding: 10px;
-            }
-            
-            .story-container {
-                padding: 30px 25px;
-                margin: 10px auto;
-                border-width: 2px;
-            }
-            
-            .story-container::before {
-                top: 15px;
-                left: 15px;
-                right: 15px;
-                bottom: 15px;
-            }
-            
-            h1 {
-                font-size: 1.8rem;
-                letter-spacing: 2px;
-            }
-            
-            .author {
-                font-size: 1.1rem;
-            }
-            
-            article {
-                font-size: 1.2rem;
-                line-height: 1.75;
-            }
-            
-            article::first-letter {
-                font-size: 4rem;
-            }
-            
-            p {
-                text-indent: 1.5rem;
-            }
-        }
-
-        @media print {
-            body {
-                background: white;
-            }
-            
-            .story-container {
-                box-shadow: none;
-                border: 1px solid #000;
-                max-width: 100%;
-            }
-            
-            .back-link {
-                display: none;
-            }
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Tα Σμυρδάκια - Γoθθικό διήγημα τρόμου">
+  <meta name="author" content="Μιχαήλ Σωτηρίου Μιχαλακόπουλος">
+  <title>Τα Σμυρδάκια | Γoθθικές Ιστορίες</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600&family=Crimson+Text:ital@0;1&display=swap" rel="stylesheet">
+  <style>
+    * { box-sizing: border-box; }
+    :root {
+      --bg: #050608;
+      --bg-alt: #0b0c10;
+      --fg: #f2f1ed;
+      --accent: #b71c1c;
+      --accent-soft: #4a0f15;
+      --body-font: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans", "Roboto", "Helvetica Neue", Arial, sans-serif;
+      --title-font: "Cormorant Garamond", "Garamond", "Times New Roman", serif;
+      --max-width: 60rem;
+      --line-height: 1.75;
+      --font-size-base: 1.05rem;
+    }
+    html { font-size: 100%; scroll-behavior: smooth; }
+    body {
+      margin: 0; padding: 0; font-family: var(--body-font); line-height: var(--line-height); font-size: var(--font-size-base); color: var(--fg);
+      background: radial-gradient(circle at top, #11121a 0, var(--bg) 55%);
+      -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility;
+    }
+    body::before {
+      content: ""; position: fixed; inset: 0; pointer-events: none;
+      background-image: radial-gradient(circle at 10% 0, rgba(255,255,255,0.05) 0, transparent 55%), radial-gradient(circle at 90% 100%, rgba(255,255,255,0.03) 0, transparent 60%);
+      opacity: 0.45; mix-blend-mode: soft-light; z-index: -1;
+    }
+    .wrapper { min-height: 100vh; display: flex; flex-direction: column; }
+    header { padding: 1.5rem 1.25rem 0.5rem; text-align: center; }
+    .logo-mark {
+      display: inline-flex; align-items: center; justify-content: center; width: 3.25rem; height: 3.25rem; border-radius: 999px;
+      border: 1px solid rgba(255,255,255,0.14); color: var(--accent); font-family: var(--title-font); font-size: 1.25rem;
+      letter-spacing: 0.15em; text-transform: uppercase; background: radial-gradient(circle, #1b0b0b 0, #050608 75%);
+      box-shadow: 0 0 18px rgba(0,0,0,0.85);
+    }
+    main { flex: 1; display: flex; justify-content: center; padding: 0 1.25rem 3rem; }
+    .page {
+      width: 100%; max-width: var(--max-width);
+      background: linear-gradient(145deg, rgba(255,255,255,0.02), transparent 40%), radial-gradient(circle at top, rgba(255,255,255,0.03), transparent 70%), var(--bg-alt);
+      border-radius: 1.5rem; border: 1px solid rgba(255,255,255,0.08); padding: 2.5rem 1.5rem 2.25rem;
+      box-shadow: 0 22px 60px rgba(0,0,0,0.8), 0 0 0 1px rgba(255,255,255,0.02);
+      position: relative; overflow: hidden;
+    }
+    .page::before, .page::after {
+      content: ""; position: absolute; inset: 1.4rem; border-radius: 1rem; pointer-events: none;
+    }
+    .page::before { border: 1px solid rgba(255,255,255,0.05); mix-blend-mode: soft-light; }
+    .page::after { border: 1px solid rgba(183,28,28,0.15); opacity: 0.35; clip-path: polygon(0 0, 85% 0, 100% 15%, 100% 100%, 15% 100%, 0 85%); }
+    .story-header { position: relative; text-align: center; margin-bottom: 2rem; z-index: 1; }
+    .story-kicker { font-size: 0.8rem; letter-spacing: 0.22em; text-transform: uppercase; color: rgba(255,255,255,0.5); margin-bottom: 0.8rem; }
+    h1 { font-family: var(--title-font); font-weight: 600; font-size: clamp(2rem, 4vw, 2.7rem); letter-spacing: 0.08em; text-transform: uppercase; margin: 0 0 0.6rem; }
+    .story-meta { font-size: 0.85rem; color: rgba(255,255,255,0.7); }
+    .story-meta span + span::before { content: "•"; margin: 0 0.5rem; color: rgba(255,255,255,0.3); }
+    .divider {
+      position: relative; height: 2.2rem; margin: 1.4rem auto 1.6rem; width: min(14rem, 60%);
+      display: flex; align-items: center; justify-content: center; color: rgba(255,255,255,0.45); font-size: 0.7rem;
+      letter-spacing: 0.35em; text-transform: uppercase;
+    }
+    .divider::before, .divider::after {
+      content: ""; flex: 1; height: 1px; background: linear-gradient(to var(--side), transparent, rgba(255,255,255,0.35), transparent);
+    }
+    .divider::before { --side: left; margin-right: 0.8rem; }
+    .divider::after { --side: right; margin-left: 0.8rem; }
+    .divider-icon {
+      width: 2.25rem; height: 2.25rem; border-radius: 999px; border: 1px solid rgba(255,255,255,0.25);
+      display: flex; align-items: center; justify-content: center; font-size: 1.1rem;
+      box-shadow: 0 0 14px rgba(0,0,0,0.75); background: radial-gradient(circle, #1d1013 0, #050608 75%);
+    }
+    .story-body { position: relative; z-index: 1; }
+    .story-body p {
+      margin: 0 0 1.2rem; text-indent: 1.5em; color: rgba(245,245,245,0.93); text-align: justify;
+    }
+    .story-body p:first-child { text-indent: 0; }
+    .story-body p::first-letter {
+      font-family: var(--title-font); float: left; font-size: 3.2rem; line-height: 2.4rem; padding-right: 0.4rem;
+      color: var(--accent); text-shadow: 0 0 14px rgba(0,0,0,0.9); font-weight: 600;
+    }
+    @media (max-width: 768px) {
+      .page { padding: 1.9rem 1.1rem 2rem; border-radius: 1.1rem; }
+      .page::before, .page::after { inset: 1rem; }
+      h1 { font-size: clamp(1.5rem, 3vw, 2.2rem); }
+      .story-body p { text-indent: 1.2em; font-size: 1rem; }
+      .story-body p::first-letter { font-size: 2.5rem; line-height: 2rem; }
+    }
+    @media (max-width: 480px) {
+      body { font-size: 0.95rem; }
+      header { padding: 1rem 0.8rem 0.3rem; }
+      main { padding: 0 0.8rem 2rem; }
+      .page { padding: 1.5rem 0.9rem 1.6rem; margin: 0; border-radius: 0.9rem; }
+      .page::before, .page::after { inset: 0.8rem; }
+      h1 { font-size: 1.3rem; letter-spacing: 0.05em; }
+      .logo-mark { width: 2.8rem; height: 2.8rem; font-size: 1rem; }
+      .story-kicker { font-size: 0.7rem; letter-spacing: 0.18em; }
+      .story-body p { text-indent: 1em; margin: 0 0 1rem; }
+      .story-body p::first-letter { font-size: 2rem; line-height: 1.8rem; }
+    }
+    footer { padding: 0 1.25rem 1.5rem; text-align: center; font-size: 0.8rem; color: rgba(255,255,255,0.5); }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+  </style>
 </head>
 <body>
-
-<div class="story-container">
-    <a href="/short-stories/index.html" class="back-link">← Επιστροφή στην αρχική</a>
-    
+  <div class="wrapper">
     <header>
-        <h1>Τα Σμυρδάκια</h1>
-        <div class="author">Μιχαήλ Σωτηρίου Μιχαλακόπουλος</div>
+      <div class="logo-mark">Μ</div>
     </header>
-
-    <article>
-        <p>Εδώ και χρόνια ζω μακριά από τα μέρη όπου γεννήθηκα, μα η απόσταση, όπως αποδείχτηκε, δεν ήταν παρά μια ψευδαίσθηση. Τις νύχτες του χειμώνα, όταν ο βοριάς χτυπά τα παραθυρόφυλλα με μανία που θα τη νόμιζες σχεδόν ανθρώπινη, ξυπνώ με την καρδιά να κτυπά βίαια. Κι ακούω κάτι. Όχι μόνο τον άνεμο. Ακούω φωνές. Παιδικές φωνές που σκίζονται στο κλάμα, σαν να μου ζητούν κάτι που δεν μπορώ να τους δώσω. Και το χειρότερο απ' όλα είναι πως ξέρω πολύ καλά τι θέλουν. Με θυμούνται. Με περιμένουν.</p>
-
-        <p>Ήμουν παιδί όταν πρωτάκουσα για τα Σμυρδάκια. Οι γιαγιές του χωριού, καθισμένες γύρω από τη φωτιά με τα πρόσωπα γλυμμένα σαν κερί στο μισοσκόταδο, μάς τα διηγούνταν με φωνή που έτρεμε. Σταυρώνονταν πριν αρχίσουν. Σταυρώνονταν και μετά, με πιο νευρικές κινήσεις. Κι εμείς τα παιδιά, μαζεμένα στις γωνιές με τα γόνατα αγκαλιά, κρατούσαμε την αναπνοή και κοιτούσαμε τα σκοτάδια πέρα από τα παράθυρα, περιμένοντας να δούμε κάτι να κινείται ανάμεσα στα δέντρα.</p>
-
-        <p>Μάς έλεγαν πως στα βάθη του βουνού, εκεί όπου ούτε οι τσοπάνηδες δεν πηγαίνουν πια, κι ας χάνουν τα ζώα τους, υπάρχουν μέρη που η γη ανασαίνει. Μέρη όπου το χώμα είναι μαλακό και βρεγμένο ακόμα κι όταν δεν έχει βρέξει για μήνες, μέρη όπου το φως του ήλιου δεν φτάνει καλά, κι ακόμα κι το καλοκαίρι μια παγωμένη υγρασία ξεπετάγεται από το έδαφος. Εκεί, κάτω από τις ρίζες των αγριοσυκιών κι εκεί όπου τα γερασμένα πλατάνια έχουν κουφάνει από μέσα, θάφτηκαν τα Σμυρδάκια. Παιδιά που γεννήθηκαν από ντροπή. Παιδιά που δεν έπρεπε να υπάρχουν.</p>
-
-        <p>Οι μάνες τους, τρομαγμένες από τον κόσμο, από τον παπά, από τις γειτόνισσες, από τα βλέμματα που θα τις καταδίκαζαν, τα έπαιρναν αμόλητα από τη γέννα τους και τα πήγαιναν στο δάσος. Μόνες. Τη νύχτα. Κι εκεί, με τα χέρια να τρέμουν και τις καρδιές να σκίζονται, έσκαβαν βιαστικά κι έπειτα τα έθαβαν ζωντανά. Τα άκουγαν να κλαίνε καθώς τα σκέπαζε το χώμα. Τα άκουγαν να πνίγονται. Κι ύστερα γυρνούσαν πίσω και δεν μιλούσαν ποτέ ξανά γι' αυτό, με κανέναν, ούτε καν στον ύπνο τους. Αλλά τα μάτια τους είχαν αλλάξει. Είχαν δει κάτι που δεν ξεχνιόταν, κάτι που δεν συγχωριόταν.</p>
-
-        <p>Οι γιαγιές έλεγαν πως τα Σμυρδάκια δεν πέθαιναν αμέσως. Έμεναν εκεί κάτω για μέρες, μερικά για βδομάδες ολόκληρες. Τα μικρά τους πνευμόνια ρουφούσαν χώμα αντί για αέρα. Τα νύχια τους γρατζουνούσαν το σκοτάδι. Και κάποια στιγμή, όταν δεν είχαν πια δύναμη ούτε για κλάμα, άρχιζαν να ψιθυρίζουν. Όχι με φωνή, γιατί το χώμα είχε φράξει τα στόματά τους, αλλά με τη σκέψη τους, με μια άλλη γλώσσα που μόνο οι νεκροί καταλαβαίνουν. Κι αυτοί οι ψίθυροι έμειναν. Ζουν ακόμα μέσα στον άνεμο, στα κλαδιά που τρίζουν, στο ξερό φύλλο που σέρνεται. Περιμένουν.</p>
-
-        <div class="divider">❦</div>
-
-        <p>Η γιαγιά μου με κοιτούσε με μάτια που ήξεραν πολλά περισσότερα απ' όσα έλεγε. Με κρατούσε από το χέρι τόσο σφιχτά που πονούσα. «Να μην ακούς ποτέ αν σε φωνάξουν με το όνομά σου», μου έλεγε. «Να μην απαντάς. Να μην κοιτάζεις. Γιατί μόλις τα δεις, θα σε θυμηθούν. Και δεν ξεχνάνε.»</p>
-
-        <p>Τότε δεν καταλάβαινα. Πώς να καταλάβω; Ήμουν παιδί. Αλλά μια νύχτα, όταν ο βοριάς φυσούσε τόσο δυνατά που το σπίτι έτρεμε και τα κεραμίδια έπεφταν από τη σκεπή, άκουσα. Κάποιος με φώναζε από έξω. Μια παιδική φωνή, λεπτή και θλιμμένη, σαν σπασμένη. Φώναζε το όνομά μου. Ξανά και ξανά, με υπομονή που θα τη νόμιζες αιώνια.</p>
-
-        <p>Σηκώθηκα από το κρεβάτι. Η γιαγιά κοιμόταν στο διπλανό δωμάτιο, τουλάχιστον έτσι νόμιζα. Πήγα στο παράθυρο και το άνοιξα λίγο. Ο παγωμένος αέρας μού κόψε την ανάσα. Και τότε το είδα. Κάτω στον αυλόγυρο, δίπλα στην αχλαδιά που έχει πεθάνει εδώ και χρόνια, στεκόταν ένα παιδί. Ένα μικρό κορίτσι με άσπρο νυχτικό, λερωμένο. Με κοιτούσε. Δεν κουνιόταν. Απλώς με κοιτούσε. Και χαμογελούσε.</p>
-
-        <p>Κι εκείνη τη στιγμή κατάλαβα πως κάτι δεν πήγαινε καλά. Γιατί το χαμόγελό της ήταν υπερβολικά πλατύ. Πολύ πλατύ για ανθρώπινο πρόσωπο, σαν να τραβούσε κάποιος τις άκρες των χειλιών της με σύρμα. Και τα μάτια της δεν άστραφταν στο φως του φεγγαριού. Ήταν λευκά. Εντελώς λευκά, σαν βρασμένα αυγά.</p>
-
-        <p>Η φωνή της μπήκε μέσα στο κεφάλι μου χωρίς να ανοίξει τα χείλη της.</p>
-
-        <p>«Έλα να παίξουμε. Είμαστε μόνοι. Πάντα μόνοι. Πάντα κρύο έχουμε.»</p>
-
-        <p>Τότε η γιαγιά με τράβηξε πίσω τόσο απότομα που χτύπησα στον τοίχο. Έκλεισε το παράθυρο με μανία, με δυο χτυπήματα. Με σταύρωσε τρεις φορές και μετά σταύρωσε και τον εαυτό της τέσσερις. Κι έπειτα κάθισε κι έκλαψε. Την είδα να κλαίει για πρώτη και τελευταία φορά εκείνη τη νύχτα.</p>
-
-        <p>«Σε είδαν», ψιθύρισε. «Τώρα σε ξέρουν.»</p>
-
-        <div class="divider">❦</div>
-
-        <p>Από εκείνη τη νύχτα άλλαξαν όλα. Στο σχολείο τα άλλα παιδιά με αποφεύγαν χωρίς να ξέρουν γιατί. Οι δασκάλες με κοιτούσαν με περίεργο βλέμμα, σαν να μύριζαν κάτι πάνω μου. Κι εγώ άρχισα να βλέπω πράγματα. Σκιές που δεν έπρεπε να υπάρχουν. Φιγούρες που στέκονταν στις άκρες του δρόμου όταν γυρνούσα από το σχολείο, μικρές φιγούρες που με παρακολουθούσαν. Παιδιά. Και τις νύχτες τα άκουγα κάτω από το παράθυρό μου να γρατζουνάνε, να ψιθυρίζουν το όνομά μου μέσα σε μια λέξη που δεν είχα ακούσει ποτέ.</p>
-
-        <p>Οι γιαγιές είχαν πει κι άλλο κάτι, κάτι που δεν καταλάβαινα τότε. Έλεγαν πως τα Σμυρδάκια δεν ψάχνουν απλώς για παιδιά. Ψάχνουν αδέλφια. Εκείνους που θα μπορούσαν να είναι μαζί τους κάτω στο σκοτάδι, εκείνους που γεννήθηκαν αλλά θα έπρεπε να μην γεννηθούν. Και όταν βρουν κάποιον, δεν τον αφήνουν. Ποτέ.</p>
-
-        <p>Έφυγα από το χωριό μόλις μεγάλωσα. Σπούδασα στην πόλη. Προσπάθησα να ξεχάσω. Αλλά πώς να ξεχάσεις κάτι που ζει μέσα σου, που αναπνέει μαζί σου; Τα όνειρα δεν σταμάτησαν ποτέ. Κάθε νύχτα τα έβλεπα. Κάθε νύχτα με φώναζαν. Και πάντα με το ίδιο χαμόγελο. Εκείνο το τρομακτικό, αδύνατο χαμόγελο που δεν ανήκει σε ανθρώπινο πρόσωπο.</p>
-
-        <p>Μετά πέθανε η γιαγιά μου. Και στην κηδεία της, μια γριά που δεν την ήξερα, δεν την είχα δει ποτέ ξανά, ήρθε κοντά μου. Με κοίταξε για πολλή ώρα κι ύστερα ψιθύρισε: «Ξέρεις γιατί πέθανε;»</p>
-
-        <p>Δεν απάντησα. Τι να πω;</p>
-
-        <p>«Γιατί προσπαθούσε να σε προστατέψει. Κάθε νύχτα προσευχόταν. Κάθε νύχτα τα κρατούσε μακριά. Τώρα όμως...» Η γριά σταμάτησε. Με κοίταξε βαθιά στα μάτια. «Τώρα δεν υπάρχει κανένας να σε προστατέψει.»</p>
-
-        <p>Και είχε δίκιο.</p>
-
-        <div class="divider">❦</div>
-
-        <p>Την πρώτη νύχτα μετά την κηδεία τα άκουσα να χτυπούν την πόρτα μου. Όχι δυνατά. Απαλά. Σαν παιδικά χεράκια. Κτουπ. Κτουπ. Κτουπ. Σηκώθηκα. Πλησίασα την πόρτα. Και η φωνή ήρθε από την άλλη πλευρά, λιγνή και γλυκιά.</p>
-
-        <p>«Άνοιξέ μας. Κρυώνουμε.»</p>
-
-        <p>Δεν άνοιξα. Κάθισα στη γωνία του δωματίου και περίμενα το πρωί. Αλλά το κτύπημα δεν σταμάτησε. Συνέχισε όλη τη νύχτα. Κτουπ. Κτουπ. Κτουπ. Ρυθμικό. Υπομονετικό. Αιώνιο.</p>
-
-        <p>Την επόμενη μέρα βρήκα γρατζουνιές στην πόρτα. Μικρές γρατζουνιές. Από μέσα προς τα έξω. Σαν κάποιος να προσπαθούσε να βγει. Αλλά η πόρτα ήταν κλειδωμένη από έξω.</p>
-
-        <p>Εκείνη τη νύχτα τα είδα μέσα στο σπίτι μου. Δεν ξέρω πώς μπήκαν. Απλώς ήταν εκεί. Στις γωνιές. Κάτω από το τραπέζι. Πίσω από την κουρτίνα. Μικρές σιλουέτες. Ακίνητες. Με λευκά μάτια που δεν έκλειναν ποτέ, που δεν έβλεπαν αλλά με κοίταζαν ακόμα.</p>
-
-        <p>Έτρεξα στο μπάνιο. Κλείδωσα την πόρτα. Άναψα όλα τα φώτα. Και τότε κοίταξα τον καθρέφτη. Και πάγωσα.</p>
-
-        <p>Πίσω μου, στον καθρέφτη, στεκόταν ένα παιδί. Ένα μικρό αγόρι με ρούχα γεμάτα χώμα, με προσωπάκι λερωμένο. Με μάτια λευκά σαν γάλα που έχει κόψει. Άπλωσε το χέρι του προς εμένα. Κι όταν γύρισα, δεν υπήρχε τίποτα. Αλλά στον καθρέφτη ήταν ακόμα εκεί. Χαμογελούσε.</p>
-
-        <p>«Σε θυμούμαι», ψιθύρισε. «Ήσουν εκεί όταν η μάνα μου με έθαψε. Με άκουσες να κλαίω. Και δεν ήρθες να με βγάλεις. Κανένας δεν ήρθε.»</p>
-
-        <p>Έσπασα τον καθρέφτη με τη γροθιά μου. Το αίμα έτρεξε. Αλλά η φωνή δεν σταμάτησε.</p>
-
-        <p>«Δεν πειράζει. Σύντομα θα είσαι μαζί μας. Εκεί κάτω. Εκεί όπου δεν υπάρχει φως. Εκεί όπου όλοι είμαστε αδέλφια.»</p>
-
-        <div class="divider">❦</div>
-
-        <p>Αυτό ήταν πριν από έξι μέρες. Από τότε δεν έχω κοιμηθεί. Δεν μπορώ. Γιατί κάθε φορά που κλείνω τα μάτια μου τα βλέπω. Είναι παντού. Στους τοίχους. Στο ταβάνι. Κάτω από το κρεβάτι. Με αγγίζουν. Με τραβούν. Και κάθε πρωί ξυπνώ με χώμα στο στόμα, με γρατζουνιές στα χέρια που δεν θυμάμαι πού τις έκανα, με νύχια κάτω από τα νύχια μου που δεν είναι δικά μου.</p>
-
-        <p>Χτες βρήκα ένα νεκρό πουλί στο μαξιλάρι μου. Είχε θαφτεί ζωντανό μέσα στο βαμβάκι. Τα νύχια του είχαν γρατζουνίσει απελπισμένα.</p>
-
-        <p>Τώρα καθώς γράφω αυτές τις γραμμές, τα ακούω πίσω από την πόρτα. Δεν χτυπούν πια. Ψιθυρίζουν. Όλα μαζί. Δεκάδες φωνές. Εκατοντάδες ίσως.</p>
-
-        <p>«Έλα. Ήρθε η ώρα. Η γη σε περιμένει. Η μάνα σου σε περιμένει. Εμείς σε περιμένουμε. Τόσα χρόνια σε περιμένουμε.»</p>
-
-        <p>Και ξέρω πως έχουν δίκιο. Γιατί όταν κοιτάζω τον σπασμένο καθρέφτη, δεν βλέπω πια το πρόσωπό μου. Βλέπω ένα παιδί. Ένα μικρό παιδί με μάτια λευκά. Που χαμογελά. Που πάντα ήταν εκεί. Που πάντα ήμουν εγώ.</p>
-
-        <p>Γιατί κατάλαβα επιτέλους την αλήθεια. Δεν με κυνηγούσαν. Με θυμούνταν. Εγώ ήμουν ένα από αυτά. Από την αρχή. Η μάνα μου με έθαψε εκείνη τη νύχτα. Αλλά κάποιος με βρήκε. Με έβγαλε. Με μεγάλωσε σαν δικό του παιδί. Κι εγώ ξέχασα. Έζησα μια ζωή που δεν μου ανήκε, με όνομα που δεν ήταν δικό μου.</p>
-
-        <p>Αλλά τα Σμυρδάκια δεν ξέχασαν. Κι ήρθαν να με πάρουν πίσω.</p>
-
-        <p>Τώρα η πόρτα ανοίγει. Αργά. Και βλέπω τα χεράκια. Τα άσπρα χεράκια με τα μαύρα νύχια. Και χαμογελώ. Γιατί επιτέλους θυμήθηκα. Επιτέλους γύρισα στο σπίτι μου. Στο σκοτάδι. Εκεί όπου ανήκω. Με τα αδέλφια μου. Τα Σμυρδάκια.</p>
-    </article>
-
+    <main>
+      <article class="page">
+        <header class="story-header">
+          <div class="story-kicker">Γoθθικές Ιστορίες</div>
+          <h1>Τα Σμυρδάκια</h1>
+          <div class="story-meta">
+            <span>Διήγημα τρόμου</span>
+            <span>Κείμενο: Μιχαήλ Σ. Μιχαλακόπουλος</span>
+          </div>
+        </header>
+        <div class="divider">
+          <div class="divider-icon">✥</div>
+        </div>
+        <section class="story-body">          <p>Εδώ και χρόνια ζω μακριά από τα μέρη όπου γεννήθηκα, μα η απόσταση, όπως αποδείχθηκε, δεν ήταν παρά μια ψευδαίσθηση. Τις νύχτες του χειμώνα, όταν ο βοριάς χτυπά τα παραθυρόφυλλα με μανία που θα τη νόμιζες σχεδόν ανθρώπινη, ξυπνώ με την καρδιά να κτυπά βίαια. Κι ακούω κάτι. Όχι μόνο τον άνεμο. Ακούω φωνές. Παιδικές φωνές που σκίζονται στο κλάμα, σαν να μου ζητούν κάτι που δεν μπορώ να τους δώσω. Και το χειρότερο απ’ όλα είναι πως ξέρω πολύ καλά τι θέλουν. Με θυμούνται. Με περιμένουν.</p>
+          <p>Ήμουν παιδί όταν πρωτάκουσα για τα Σμυρδάκια. Οι γιαγιές του χωριού, καθισμένες γύρω από τη φωτιά με τα πρόσωπα γλυμμένα σαν κερί στο μισοσκόταδο, μάς τα διηγούνταν με φωνή που έτρεμε. Σταυρώνονταν πριν αρχίσουν. Σταυρώνονταν και μετά, με πιο νευρικές κινήσεις. Κι εμείς τα παιδιά, μαζεμένα στις γωνιές με τα γόνατα αγκαλιά, κρατούσαμε την ανάπνοη και κοιτούσαμε τα σκοτάδια πέρα από τα παράθυρα, περιμένοντας να δούμε κάτι να κινείται ανάμεσα στα δέντρα.</p>          <p>Μάς έλεγαν πως στα βάθη του βουνού, εκεί όπου ούτε οι τσοπάνηδες δεν πηγαίνουν πια, Κι ας χάνουν τα ζώα τους, υπάρχουν μέρη που η γη ανασαίνει. Μέρη όπου το χώμα είναι μαλακό και βρεγμένο ακόμα κι όταν δεν έχει βρέξει για μήνες, μέρη όπου το φώς του ήλιου δεν φτάνει καλά, κι ακόμα κι το καλοκαίρι μια παγωμένη υγρασία ξεπετάγεται από το έδαφος. Εκεί, κάτω από τις ρίζες των αγριοσυκιών κι εκεί όπου τα γερασμένα πλατάνια έχουν κουφάνει από μέσα, θάφτηκαν τα Σμυρδάκια. Παιδιά που γεννήθηκαν από ντροπή. Παιδιά που δεν έπρεπε να υπάρχουν.</p>
+        </section>
+      </article>
+    </main>
     <footer>
-        <p>&copy; 2026 Μιχαήλ Σωτηρίου Μιχαλακόπουλος — Διατηρούνται όλα τα πνευματικά δικαιώματα</p>
+      © 2026 Μιχαήλ Σωτηρίου Μιχαλακόπουλος — Διατηρούνται όλα τα πνευματικά δικαιώματα
     </footer>
-</div>
-
+  </div>
 </body>
 </html>
-
-
-
-
-
-
