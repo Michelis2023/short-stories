@@ -21,8 +21,8 @@
 
 ## 🎨 Σχεδίαση & Πλατφόρμες
 Update README with new story and file structure
-* • **Γλώσσα**: HTML5 + CSS3 🌈
-* • **Άρη**: Ελληνικά 🇬🇷
+* • **Τεχνολογία**: HTML5 + CSS3 🌈
+* • **Γλώσσα Κύρια**: Ελληνικά 🇬🇷
 * • **Διάθεση**: Live μέσω GitHub Pages 🚀
 * • **Άδεια**: CC0 1.0 Universal (Public Domain) 🔓
 
