@@ -1,6 +1,6 @@
 # 🐀 Συλλογή Γοτθικών Διηγημάτων
 
-[![License: All Rights Reserved](https://img.shields.io/badge/License-CC%201.0%20Universal-blue?style=for-the-badge)](https://creativecommons.org/publicdomain/zero/1.0/)
+[![License: All Rights Reserved](https://img.shields.io/badge/License-All%20Rights%20Reserved-blue?style=for-the-badge)](https://creativecommons.org/publicdomain/zero/1.0/)
 [![Language: Greek](https://img.shields.io/badge/Language-Ελληνικά-blue?style=for-the-badge)](https://el.wikipedia.org)
 [![Genre: Gothic Horror](https://img.shields.io/badge/Genre-Gothic%20Horror-red?style=for-the-badge)](https://en.wikipedia.org/wiki/Gothic_fiction)
 [![Live Site](https://img.shields.io/badge/Live%20Site-GitHub%20Pages-brightgreen?style=for-the-badge)](https://michelis2023.github.io/short-stories/)
