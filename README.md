@@ -16,6 +16,7 @@
 | 1 | **Τα Σμυρδάκια** | Γοτθικό διήγημα τρόμου | [🔗 Διάβασε](https://michelis2023.github.io/short-stories/ta-smyrdakia.html) |
 | 2 | **Το Χέρι Κάτω από το Χώμα** | Ιστορία υπερφυσικού φόβου | [🔗 Διάβασε](https://michelis2023.github.io/short-stories/to-xeri-kato-apo-to-xoma.html) |
 | 3 | **Το Ζοφερόν Μυστικόν του Αγίου Ταξιάρχη** | Ιστορία τρόμου και υπερφυσικού | [🔗 Διάβασε](https://michelis2023.github.io/short-stories/to-zopheron-mystikon-tou-agiou-taxiarchi.html) |
+| 4 | **Η Λέσχη της Κυρίας Β.** | Γοτθικό διήγημα τρόμου | [🔗 Διάβασε](https://michelis2023.github.io/short-stories/I-Leshi-tis-Kyrias-B..html) |
 
 ---
 
@@ -33,9 +34,10 @@ short-stories/
 ├─ index.html
 ├─ ta-smyrdakia.html
 ├─ to-xeri-kato-apo-to-xoma.html
-├─t o-zopheron-mystikon-tou-agiou-taxiarchi.html
+├─ to-zopheron-mystikon-tou-agiou-taxiarchi.html
 ├─ README.md
 └─ .github/workflows/ (GitHub Pages deployment)
+├─ I-Leshi-tis-Kyrias-B..html
 ```
 
 ## 🙋 Συνεισφορά
