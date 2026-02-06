@@ -1,6 +1,6 @@
 # 🐀 Συλλογή Γοτθικών Διηγημάτων
 
-[![License: CC0-1.0](https://img.shields.io/badge/License-CC%201.0%20Universal-blue?style=for-the-badge)](https://creativecommons.org/publicdomain/zero/1.0/)
+[![License: All Rights Reserved](https://img.shields.io/badge/License-CC%201.0%20Universal-blue?style=for-the-badge)](https://creativecommons.org/publicdomain/zero/1.0/)
 [![Language: Greek](https://img.shields.io/badge/Language-Ελληνικά-blue?style=for-the-badge)](https://el.wikipedia.org)
 [![Genre: Gothic Horror](https://img.shields.io/badge/Genre-Gothic%20Horror-red?style=for-the-badge)](https://en.wikipedia.org/wiki/Gothic_fiction)
 [![Live Site](https://img.shields.io/badge/Live%20Site-GitHub%20Pages-brightgreen?style=for-the-badge)](https://michelis2023.github.io/short-stories/)
@@ -24,7 +24,7 @@ Update README with new story and file structure
 * • **Τεχνολογία**: HTML5 + CSS3 🌈
 * • **Γλώσσα Κύρια**: Ελληνικά 🇬🇷
 * • **Διάθεση**: Live μέσω GitHub Pages 🚀
-* • **Άδεια**: CC0 1.0 Universal (Public Domain) 🔓
+* • **Άδεια**: All Rights Reserved 🔓
 
 ## 📄 Αρχεία
 
@@ -47,4 +47,4 @@ short-stories/
 * • **Αρχικές Αναφορές**: [Michelis2023 Profile](https://github.com/Michelis2023)
 * • **Ασκήσεις & Οδηγοί**: [Personal Repositories](https://github.com/Michelis2023?tab=repositories)
 
-**© 2026 Μιχαήλ Σ. Μιχαλακόπουλος** — CC0 1.0 Universal ⏐
+**© 2026 Μιχαήλ Σ. Μιχαλακόπουλος** — All Rights Reserved ⏐
