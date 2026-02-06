@@ -24,7 +24,7 @@ Update README with new story and file structure
 * • **Τεχνολογία**: HTML5 + CSS3 🌈
 * • **Γλώσσα Κύρια**: Ελληνικά 🇬🇷
 * • **Διάθεση**: Live μέσω GitHub Pages 🚀
-* • **Άδεια**: All Rights Reserved 🔓
+* • **Άδεια**: All Rights Reserved 🔒
 
 ## 📄 Αρχεία
 
