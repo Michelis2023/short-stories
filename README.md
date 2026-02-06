@@ -31,13 +31,16 @@ Update README with new story and file structure
 
 ```
 short-stories/
+├─ .github/workflows/ (GitHub Pages deployment)
+├─ I-Leshi-tis-Kyrias-B..html
+├─ README.md
+├─ google7e1e17ca9038df2f.html
 ├─ index.html
 ├─ ta-smyrdakia.html
 ├─ to-xeri-kato-apo-to-xoma.html
-├─ to-zopheron-mystikon-tou-agiou-taxiarchi.html
-├─ README.md
-└─ .github/workflows/ (GitHub Pages deployment)
-├─ I-Leshi-tis-Kyrias-B..html
+└─ to-zopheron-mystikon-tou-agiou-taxiarchi.html
+  
+
 ```
 
 ## 🙋 Συνεισφορά
