@@ -233,6 +233,7 @@
             background: rgba(255, 255, 255, 0.05);
             border: 1px solid var(--crimson);
             border-radius: 8px;
+            text-align: center;
         }
         .newsletter h3 {
             font-family: 'Cinzel', serif;
@@ -244,16 +245,23 @@
             margin-bottom: 15px;
             font-size: clamp(0.9rem, 2vw, 0.95rem);
         }
+        .newsletter form {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            align-items: center;
+            max-width: 400px;
+            margin: 0 auto;
+        }
         .newsletter input {
             width: 100%;
-            max-width: 400px;
             padding: 12px;
             border: 1px solid var(--crimson);
             border-radius: 5px;
             background: rgba(255, 255, 255, 0.1);
             color: white;
             font-size: 1rem;
-            margin-bottom: 10px;
+            font-family: 'Garamond', serif;
         }
         .newsletter input::placeholder {
             color: rgba(255, 255, 255, 0.6);
@@ -268,6 +276,8 @@
             font-size: 1rem;
             cursor: pointer;
             transition: all 0.3s ease;
+            width: 100%;
+            max-width: 200px;
         }
         .newsletter button:hover:not(:disabled) {
             background: var(--gold);
@@ -446,7 +456,7 @@
                 <p>Εγγραφείτε για να μαθαίνετε πρώτοι για νέες δημοσιεύσεις και αποκλειστικό περιεχόμενο</p>
                 <form id="gothic-newsletter-form" onsubmit="return subscribeGothicNewsletter(event)">
                     <input type="email" id="gothic-email" name="email" placeholder="Το email σας" aria-label="Το email σας" required>
-                    <input type="text" id="gothic-name" name="name" placeholder="Το όνομά σας (προαιρετικό)" aria-label="Το όνομά σας" style="display:block; margin-top:10px;">
+                    <input type="text" id="gothic-name" name="name" placeholder="Το όνομά σας (προαιρετικό)" aria-label="Το όνομά σας">
                     <button type="submit" id="gothic-submit-btn">Εγγραφή</button>
                 </form>
                 <div class="success-message" id="gothic-success">✓ Ευχαριστούμε! Θα λαμβάνετε ενημερώσεις για νέα διηγήματα.</div>
