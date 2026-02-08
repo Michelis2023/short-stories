@@ -17,11 +17,12 @@
 | 2 | **Το Χέρι Κάτω από το Χώμα** | Ιστορία υπερφυσικού φόβου | [🔗 Διάβασε](https://michelis2023.github.io/short-stories/to-xeri-kato-apo-to-xoma.html) |
 | 3 | **Το Ζοφερόν Μυστικόν του Αγίου Ταξιάρχη** | Ιστορία τρόμου και υπερφυσικού | [🔗 Διάβασε](https://michelis2023.github.io/short-stories/to-zopheron-mystikon-tou-agiou-taxiarchi.html) |
 | 4 | **Η Λέσχη της Κυρίας Β.** | Γοτθικό διήγημα τρόμου | [🔗 Διάβασε](https://michelis2023.github.io/short-stories/I-Leshi-tis-Kyrias-B..html) |
+| 5 | **Η Σκιά Μέσα Στον Καθρέφτη** | Βρικόλακες στην Κωνσταντινούπολη του 1892 | [🔗 Διάβασε](https://michelis2023.github.io/short-stories/i-skia-mesa-ston-kathrefthi.html) |
 
 ---
 
 ## 🎨 Σχεδίαση & Πλατφόρμες
-Update README with new story and file structure
+
 * • **Τεχνολογία**: HTML5 + CSS3 🌈
 * • **Γλώσσα Κύρια**: Ελληνικά 🇬🇷
 * • **Διάθεση**: Live μέσω GitHub Pages 🚀
@@ -33,14 +34,13 @@ Update README with new story and file structure
 short-stories/
 ├─ .github/workflows/ (GitHub Pages deployment)
 ├─ I-Leshi-tis-Kyrias-B..html
+├─ i-skia-mesa-ston-kathrefthi.html
 ├─ README.md
 ├─ google7e1e17ca9038df2f.html
 ├─ index.html
 ├─ ta-smyrdakia.html
 ├─ to-xeri-kato-apo-to-xoma.html
 └─ to-zopheron-mystikon-tou-agiou-taxiarchi.html
-  
-
 ```
 
 ## 🙋 Συνεισφορά
