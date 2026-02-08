@@ -264,10 +264,26 @@
             transition: all 0.3s ease;
             font-size: 1rem;
         }
-        .newsletter-form button:hover {
+        .newsletter-form button:hover:not(:disabled) {
             background: var(--crimson);
             color: white;
             transform: scale(1.05);
+        }
+        .newsletter-form button:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+        }
+        .success-message {
+            color: var(--gold);
+            margin-top: 15px;
+            font-weight: bold;
+            display: none;
+        }
+        .error-message {
+            color: var(--crimson);
+            margin-top: 15px;
+            font-weight: bold;
+            display: none;
         }
         footer {
             background: rgba(0, 0, 0, 0.9);
@@ -424,10 +440,12 @@
             <div class="newsletter-section">
                 <h3>📬 Ενημερωθείτε για Νέα Διηγήματα</h3>
                 <p>Εγγραφείτε για να μαθαίνετε πρώτοι για νέες δημοσιεύσεις και αποκλειστικό περιεχόμενο</p>
-                <div class="newsletter-form">
-                    <input type="email" placeholder="Το email σας" id="newsletter-email">
-                    <button onclick="subscribeNewsletter()">Εγγραφή</button>
-                </div>
+                <form id="newsletter-form" class="newsletter-form" onsubmit="return subscribeNewsletter(event)">
+                    <input type="email" placeholder="Το email σας" id="newsletter-email" name="email" required>
+                    <button type="submit" id="submit-btn">Εγγραφή</button>
+                </form>
+                <div class="success-message" id="success-message">✓ Ευχαριστούμε! Θα λαμβάνετε ενημερώσεις για νέα διηγήματα.</div>
+                <div class="error-message" id="error-message">✗ Κάτι πήγε στραβά. Παρακαλώ δοκιμάστε ξανά.</div>
                 <p style="font-size: 0.85rem; color: #999; margin-top: 15px;">* Δεν θα μοιραστούμε το email σας με τρίτους</p>
             </div>
         </div>
@@ -439,23 +457,53 @@
     </footer>
 
     <script>
-        function subscribeNewsletter() {
+        // Formspree Newsletter Integration
+        async function subscribeNewsletter(event) {
+            event.preventDefault();
+            
             const email = document.getElementById('newsletter-email').value;
-            if (email && email.includes('@')) {
-                // Εδώ μπορείς να προσθέσεις integration με newsletter service (π.χ. Mailchimp, ConvertKit)
-                alert('Ευχαριστούμε για την εγγραφή σας! Θα λαμβάνετε ενημερώσεις για νέα διηγήματα.');
-                document.getElementById('newsletter-email').value = '';
-            } else {
-                alert('Παρακαλώ εισάγετε μια έγκυρη διεύθυνση email.');
+            const submitBtn = document.getElementById('submit-btn');
+            const successMsg = document.getElementById('success-message');
+            const errorMsg = document.getElementById('error-message');
+            
+            // Hide previous messages
+            successMsg.style.display = 'none';
+            errorMsg.style.display = 'none';
+            
+            // Disable button during submission
+            submitBtn.disabled = true;
+            submitBtn.textContent = 'Γίνεται εγγραφή...';
+            
+            try {
+                // Using Formspree - REPLACE 'YOUR_FORM_ID' with actual Formspree form ID
+                // Or use Google Forms, see instructions below
+                const response = await fetch('https://formspree.io/f/YOUR_FORM_ID', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        email: email,
+                        _subject: 'Νέα Εγγραφή Newsletter - Γοτθικά Διηγήματα',
+                        message: `Νέα εγγραφή στο newsletter από: ${email}`
+                    })
+                });
+                
+                if (response.ok) {
+                    successMsg.style.display = 'block';
+                    document.getElementById('newsletter-email').value = '';
+                } else {
+                    errorMsg.style.display = 'block';
+                }
+            } catch (error) {
+                errorMsg.style.display = 'block';
+            } finally {
+                submitBtn.disabled = false;
+                submitBtn.textContent = 'Εγγραφή';
             }
+            
+            return false;
         }
-        
-        // Enter key support for newsletter
-        document.getElementById('newsletter-email').addEventListener('keypress', function(e) {
-            if (e.key === 'Enter') {
-                subscribeNewsletter();
-            }
-        });
     </script>
 </body>
 </html>
