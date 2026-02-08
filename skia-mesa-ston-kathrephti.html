@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="el">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Σκιά Μέσα Στον Καθρέφτη | Μιχαήλ Σωτηρίου Μιχαλακόπουλος</title>
+    <meta name="description" content="Ένα γοτθικό διήγημα τρόμου για βρικόλακες στην Κωνσταντινούπολη του 1892, εμπνευσμένο από το ύφος του Edgar Allan Poe.">
+    <meta name="author" content="Μιχαήλ Σωτηρίου Μιχαλακόπουλος">
+    
+    <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,700;1,400&family=Playfair+Display:ital,wght@0,700;1,700&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --bg-color: #0d0d0d;
+            --paper-color: #f4f1ea;
+            --accent-color: #8b0000;
+            --text-color: #2c2c2c;
+            --border-color: #6b4423;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            background-image: 
+                radial-gradient(circle at 20% 50%, rgba(139, 0, 0, 0.03) 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, rgba(139, 0, 0, 0.03) 0%, transparent 50%);
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            font-family: 'EB Garamond', serif;
+        }
+
+        .story-container {
+            background-color: var(--paper-color);
+            max-width: 800px;
+            width: 100%;
+            margin: 40px auto;
+            padding: 70px 60px;
+            box-shadow: 0 0 60px rgba(0,0,0,0.9), inset 0 0 100px rgba(139, 0, 0, 0.05);
+            border: 3px double var(--border-color);
+            position: relative;
+            background-image: 
+                url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><text y="50" font-size="100" opacity="0.015">✠</text></svg>'),
+                repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(107, 68, 35, 0.03) 2px, rgba(107, 68, 35, 0.03) 3px);
+        }
+
+        .story-container::before {
+            content: '';
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            right: 20px;
+            bottom: 20px;
+            border: 1px solid var(--border-color);
+            pointer-events: none;
+            opacity: 0.3;
+        }
+
+        .back-link {
+            display: inline-block;
+            margin-bottom: 30px;
+            color: var(--accent-color);
+            text-decoration: none;
+            font-size: 1.2rem;
+            transition: all 0.3s;
+        }
+
+        .back-link:hover {
+            color: #000;
+            text-decoration: underline;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 50px;
+            border-bottom: 3px double var(--accent-color);
+            padding-bottom: 30px;
+            position: relative;
+        }
+
+        h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3.2rem;
+            color: var(--accent-color);
+            margin: 0 0 20px 0;
+            text-transform: uppercase;
+            letter-spacing: 5px;
+            font-weight: 700;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .author {
+            font-family: 'EB Garamond', serif;
+            font-style: italic;
+            font-size: 1.3rem;
+            color: #555;
+            margin-top: 15px;
+            letter-spacing: 1px;
+        }
+
+        article {
+            font-family: 'EB Garamond', serif;
+            font-size: 1.4rem;
+            line-height: 1.9;
+            color: var(--text-color);
+            text-align: justify;
+            hyphens: auto;
+            position: relative;
+        }
+
+        article::first-letter {
+            float: left;
+            font-size: 5.5rem;
+            line-height: 0.85;
+            padding-right: 12px;
+            padding-top: 8px;
+            color: var(--accent-color);
+            font-family: 'Playfair Display', serif;
+            font-weight: bold;
+        }
+
+        p {
+            margin-bottom: 1.8rem;
+            text-indent: 2rem;
+        }
+
+        p:first-of-type {
+            text-indent: 0;
+        }
+
+        .divider {
+            text-align: center;
+            margin: 50px 0;
+            font-size: 1.8rem;
+            color: var(--accent-color);
+            letter-spacing: 10px;
+        }
+
+        footer {
+            margin-top: 60px;
+            text-align: center;
+            font-family: 'EB Garamond', serif;
+            font-size: 1rem;
+            color: #777;
+            border-top: 2px solid var(--border-color);
+            padding-top: 30px;
+            font-style: italic;
+        }
+
+        @media (max-width: 768px) {
+            .story-container {
+                padding: 50px 40px;
+                margin: 20px auto;
+            }
+            
+            h1 {
+                font-size: 2.3rem;
+                letter-spacing: 3px;
+            }
+            
+            article {
+                font-size: 1.3rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            body {
+                padding: 10px;
+            }
+            
+            .story-container {
+                padding: 30px 25px;
+                margin: 10px auto;
+                border-width: 2px;
+            }
+            
+            .story-container::before {
+                top: 15px;
+                left: 15px;
+                right: 15px;
+                bottom: 15px;
+            }
+            
+            h1 {
+                font-size: 1.7rem;
+                letter-spacing: 2px;
+            }
+            
+            .author {
+                font-size: 1.1rem;
+            }
+            
+            article {
+                font-size: 1.2rem;
+                line-height: 1.75;
+            }
+            
+            article::first-letter {
+                font-size: 4rem;
+            }
+            
+            p {
+                text-indent: 1.5rem;
+            }
+        }
+
+        @media print {
+            body {
+                background: white;
+            }
+            
+            .story-container {
+                box-shadow: none;
+                border: 1px solid #000;
+                max-width: 100%;
+            }
+            
+            .back-link {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="story-container">
+    <a href="index.html" class="back-link">← Επιστροφή στην αρχική</a>
+    
+    <header>
+        <h1>Σκιά Μέσα Στον Καθρέφτη</h1>
+        <div class="author">Μιχαήλ Σωτηρίου Μιχαλακόπουλος</div>
+    </header>
+
+    <article>
+        <p>Δεν ξέρω από πού να αρχίσω, φίλε μου, γιατί ακόμα και τώρα, καθώς γράφω αυτές τις λέξεις στο σκοτεινό μου δωμάτιο, νιώθω τα δόντια μου να τρίβονται μεταξύ τους από μόνα τους, σαν να θυμούνται τι έκαναν. Ήμουν ο Αλέξανδρος, ένας φτωχός ζωγράφος με χέρια λερωμένα από μπογιές και όνειρα που δεν έβγαιναν ποτέ αληθινά, εκεί στη γριά Κωνσταντινούπολη του '92. Η Πόλη τότε ήταν ένας λαβύρινθος από στενά που μύριζαν ιδρώτα και ψέματα, με τον Βόσπορο να γλείφει την κοιλιά των πλοίων σαν σκυλί πεινασμένο. Έμενα σε ένα σχεδόν σάπιο ξύλινο σπίτι στο Γαλατά, όπου οι νύχτες έρχονταν νωρίς και έφευγαν αργά, αφήνοντας πίσω μια υγρασία που σου κολλούσε στο δέρμα σαν ανάσα ξένου.</p>
+        
+        <p>Τα βήματα ξεκίνησαν σιγά σιγά. Στην αρχή νόμιζα ότι ήταν γείτονες (εκείνοι οι ναυτικοί που γυρνούσαν μεθυσμένοι και κλωτσούσαν τις πόρτες). Αλλά δεν ήταν. Ήταν βήματα που δεν ακουμπούσαν το ξύλο. Ήταν σαν να γλιστρούσαν πάνω του, αφήνοντας πίσω μια υγρασία κρύα σαν να είχε βρέξει μέσα στο σπίτι. Κάθε βράδυ πιο δυνατά, πιο κοντά, μέχρι που μια νύχτα, με τον αέρα να σφίγγει σαν χέρι γύρω από τον λαιμό μου, η πόρτα μου δεν χτύπησε. Την ένιωσα να δονείται σαν να την έξυνε κάτι από έξω με νύχια μακριά και αιχμηρά.</p>
+        
+        <p>Άνοιξα, και ήταν εκείνη. Η Λιλιάνα. Θεέ μου, ακόμα θυμάμαι πώς μύριζε. Όχι άρωμα, αλλά κάτι μεταξύ χώματος βρεγμένου και αίματος από πληγή που δεν κλείνει. Ήταν ψηλή, πολύ ψηλή, με δέρμα χλωμό σαν χαρτί που έχει μουλιάσει και ξεραθεί λάθος και μάτια πράσινα που δεν έλαμπαν. Ρουφούσαν το φως σαν μαύρες τρύπες ντυμένες με χρώμα. Τα μαλλιά της έπεφταν ίσια, μαύρα, και τα χείλη της κόκκινα σαν να είχε φάει φράουλες και μετά τις είχε φτύσει έξω με αίμα. «Αλέξανδρε» ψιθύρισε, και η φωνή της μπήκε μέσα μου σαν καπνός: γλυκός αλλά πνιγηρός. «Ζωγραφίζεις σκιές, έτσι; Θέλω να δεις τη δική μου».</p>
+        
+        <p>Δεν έπρεπε να την αφήσω να μπει. Το ήξερα, νιώθοντας το στομάχι μου να σφίγγεται σαν να 'χε πιει ξίδι. Αλλά εκείνη χαμογέλασε. Ένα χαμόγελο που δεν έφτανε στα μάτια, σαν μάσκα που γλιστράει. Και μπήκε, φέρνοντας μαζί της κρύο σαν να είχε ανοίξει πόρτα σε υπόγειο τάφο. Κάθισε απέναντί μου με φόρεμα μαύρο που έμοιαζε να κινείται μόνο του και μου είπε να αρχίσω. Τα χέρια της ήταν πάνω στο τραπέζι, ακίνητα, αλλά έβλεπα τις φλέβες. Μαύρες, πρησμένες, σαν σκουλήκια που σέρνονται κάτω από το δέρμα. Άρχισα να ζωγραφίζω και το δωμάτιο άλλαξε. Οι σκιές στους τοίχους μεγάλωναν σαν να έρχονταν πιο κοντά, και τα κεριά έλιωναν γρήγορα σαν να τα έτρωγε κάτι αόρατο.</p>
+
+        <div class="divider">❦</div>
+        
+        <p>«Ποια είσαι;» τη ρώτησα, με τη φωνή μου να βγαίνει σπασμένη σαν γυαλί που ραγίζει. Γέλασε τότε. Ένα γέλιο υγρό σαν να έβηχε νερό από πνιγμό. «Είμαι η νύχτα σου, Αλέξανδρε. Γεννήθηκα σε ένα χωριό στα βουνά όπου οι παππούδες έλεγαν ιστορίες για τέρατα που πίνουν αίμα. Ένας ήρθε, νύχτα με νύχτα, και με πήρε. Δεν με βίασε. Με έκανε δική του. Τα δόντια του μπήκαν εδώ», και έδειξε τον λαιμό της όπου υπήρχε μια ουλή λεπτή σαν γραμμή από μαχαίρι. «Από τότε πεινάω. Πεινάω για θερμότητα, για χτύπους καρδιάς. Και αυτή η πόλη είναι ένα τραπέζι γεμάτο φαγητό που περπατάει».</p>
+        
+        <p>Τα χρώματα στα πινέλα μου τα ένιωθα να βαραίνουν σαν να ρουφούσε η παλέτα μου τη ζωή μου γουλιά γουλιά. Κοίταξα τον πίνακα και πάγωσα. Το πρόσωπό της δεν ήταν δικό της. Ήταν δικό μου, αλλά λάθος: μάτια κόκκινα, δόντια μακριά και ένα χαμόγελο που έλεγε «έλα πιο κοντά». «Λείπει η γεύση» είπε αυτή, και πριν κλείσω τα μάτια ήταν πάνω μου. Τα νύχια της μπήκαν πίσω από τα αυτιά μου, κρατώντας με σαν να 'μουν κούκλα, και η ανάσα της (Θεέ, η ανάσα της) μύριζε σαν τάφο που έχει ανοίξει μετά από βροχή, υγρό και σάπιο. «Μην αντισταθείς» μουρμούρισε, και τα δόντια της βυθίστηκαν στον λαιμό μου αργά, σκόπιμα, σαν να δοκίμαζε κρασί.</p>
+        
+        <p>Ο πόνος ήταν όχι πόνος. Ήταν σαν να μου άνοιγαν την πόρτα σε κάτι μαύρο, κάτι που περίμενε χρόνια. Ένιωσα το αίμα μου να φεύγει (ζεστό και κολλώδες) και μαζί του να φεύγει η ζεστασιά από τα δάχτυλά μου, από την καρδιά μου. Για μια στιγμή είδα τα πάντα: τα παιδικά μου χρόνια, τις γυναίκες που έχασα, και μετά τάφους που ανοίγουν, χέρια χλωμά να με τραβάνε κάτω, και εμένα να γελάω μέσα στο σκοτάδι με δόντια που δεν ήταν δικά μου. Σταμάτησε απότομα, γλείφοντας την πληγή, και με κοίταξε. «Τώρα νιώθεις. Την πείνα».</p>
+
+        <div class="divider">❦</div>
+        
+        <p>Έπεσα κάτω λαχανιάζοντας, με τον λαιμό να στάζει και το κεφάλι να γυρίζει σαν να 'χα πιει δηλητήριο. Εκείνη έφυγε σαν καπνός, αφήνοντας πίσω μόνο μια μυρωδιά αίματος και ένα ψίθυρο: «Αύριο θα γυρίσω. Και τότε θα πιεις».</p>
+        
+        <p>Ξύπνησα με τον ήλιο να με τρυπάει σαν βελόνες, και ο καθρέφτης... ο καθρέφτης δεν έδειχνε τίποτα. Μόνο κενό, σαν να 'χα σβήσει. Βγήκα έξω και η Πόλη ήταν εφιάλτης: άκουγα καρδιές να χτυπούν γύρω μου σαν τύμπανα σε κηδεία και μύριζα αίμα παντού (γλυκό, φρέσκο, καυτό). Εκείνο το βράδυ γύρισε με έναν άλλο, έναν άντρα ψηλό σαν στήλη με πρόσωπο ρυτιδιασμένο σαν παλιό δέρμα και μάτια που δεν έκλειναν ποτέ. «Ο δημιουργός μας» είπε αυτή. «Μας φτιάχνει από την πείνα του».</p>
+        
+        <p>Τώρα ζω έτσι: νύχτες που κυνηγάω σκιές πίνοντας για να μην τρελαθώ, αλλά κάθε γουλιά με κάνει να θυμάμαι λιγότερο τον άνθρωπο που ήμουν. Δεν είμαστε τέρατα από παραμύθια. Είμαστε εσύ και εγώ, φίλε, όταν η νύχτα σε αγγίξει και σου ψιθυρίσει ότι η πείνα δεν τελειώνει. Ποτέ.</p>
+        
+        <p>Αν νιώσεις ποτέ βήματα πίσω σου στα στενά, γύρνα. Και κοίτα με στα μάτια. Θα δεις τον εαυτό σου.</p>
+    </article>
+
+    <footer>
+        <p>&copy; 2026 Μιχαήλ Σωτηρίου Μιχαλακόπουλος — Διατηρούνται όλα τα πνευματικά δικαιώματα</p>
+    </footer>
+</div>
+
+</body>
+</html>
