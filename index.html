@@ -3,8 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Γοτθικά διηγήματα εμπνευσμένα από την ελληνική λαογραφία και παράδοση. Διαβάστε δωρεάν online τις σκοτεινές ιστορίες του Μιχαήλ Σ. Μιχαλακόπουλου.">
+    <meta name="keywords" content="γοτθικά διηγήματα, ελληνική λαογραφία, διηγήματα τρόμου, Αρκαδία, short stories">
+    <meta property="og:title" content="Μιχαήλ Σ. Μιχαλακόπουλος | Γοτθικά Διηγήματα">
+    <meta property="og:description" content="Διαβάστε δωρεάν γοτθικά διηγήματα εμπνευσμένα από την ελληνική λαογραφία">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://michelis2023.github.io/short-stories/">
     <title>Μιχαήλ Σ. Μιχαλακόπουλος | Γοτθικά Διηγήματα</title>
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Garamond:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         * {
             margin: 0;
@@ -46,6 +53,23 @@
             color: var(--crimson);
             font-style: italic;
         }
+        .social-links {
+            margin-top: 15px;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+        .social-links a {
+            color: var(--gold);
+            font-size: 1.5rem;
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+        .social-links a:hover {
+            color: var(--crimson);
+            transform: scale(1.2);
+        }
         main {
             flex: 1;
             display: flex;
@@ -67,6 +91,26 @@
             margin-bottom: 20px;
             line-height: 1.8;
         }
+        .about-section {
+            background: rgba(139, 0, 0, 0.1);
+            border: 1px solid var(--crimson);
+            border-radius: 8px;
+            padding: 30px;
+            margin-bottom: 50px;
+            text-align: center;
+        }
+        .about-section h2 {
+            font-family: 'Cinzel', serif;
+            color: var(--gold);
+            margin-bottom: 15px;
+            font-size: clamp(1.5rem, 4vw, 2rem);
+        }
+        .about-section p {
+            color: #ccc;
+            line-height: 1.8;
+            font-size: clamp(0.95rem, 2vw, 1.05rem);
+            margin-bottom: 10px;
+        }
         .stories-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -81,7 +125,7 @@
             text-align: center;
             transition: all 0.3s ease;
             cursor: pointer;
-            min-height: 280px;
+            min-height: 350px;
             display: flex;
             flex-direction: column;
             justify-content: space-between;
@@ -98,6 +142,22 @@
             margin-bottom: 15px;
             word-wrap: break-word;
             hyphens: auto;
+        }
+        .story-description {
+            color: #bbb;
+            margin-bottom: 15px;
+            font-size: clamp(0.9rem, 2vw, 0.95rem);
+            line-height: 1.6;
+            font-style: italic;
+        }
+        .reading-time {
+            color: var(--gold);
+            font-size: 0.85rem;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 5px;
         }
         .story-card p {
             color: #bbb;
@@ -128,6 +188,87 @@
             color: var(--dark);
             transform: scale(1.05);
         }
+        .share-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 15px;
+            flex-wrap: wrap;
+        }
+        .share-btn {
+            display: inline-block;
+            padding: 8px 12px;
+            border-radius: 5px;
+            color: white;
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+        }
+        .share-btn:hover {
+            transform: translateY(-3px);
+            opacity: 0.9;
+        }
+        .share-fb { background: #3b5998; }
+        .share-twitter { background: #1DA1F2; }
+        .share-whatsapp { background: #25D366; }
+        .newsletter-section {
+            background: rgba(212, 175, 55, 0.1);
+            border: 2px solid var(--gold);
+            border-radius: 8px;
+            padding: 30px;
+            text-align: center;
+            margin-top: 40px;
+        }
+        .newsletter-section h3 {
+            font-family: 'Cinzel', serif;
+            color: var(--gold);
+            margin-bottom: 15px;
+            font-size: clamp(1.3rem, 3vw, 1.8rem);
+        }
+        .newsletter-section p {
+            color: #ccc;
+            margin-bottom: 20px;
+            font-size: clamp(0.9rem, 2vw, 1rem);
+        }
+        .newsletter-form {
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+            flex-wrap: wrap;
+            max-width: 500px;
+            margin: 0 auto;
+        }
+        .newsletter-form input {
+            flex: 1;
+            min-width: 250px;
+            padding: 12px 20px;
+            border: 2px solid var(--gold);
+            border-radius: 5px;
+            background: rgba(0, 0, 0, 0.5);
+            color: white;
+            font-family: 'Garamond', serif;
+            font-size: 1rem;
+        }
+        .newsletter-form input::placeholder {
+            color: #999;
+        }
+        .newsletter-form button {
+            padding: 12px 30px;
+            background: var(--gold);
+            color: var(--dark);
+            border: none;
+            border-radius: 5px;
+            font-weight: bold;
+            font-family: 'Cinzel', serif;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 1rem;
+        }
+        .newsletter-form button:hover {
+            background: var(--crimson);
+            color: white;
+            transform: scale(1.05);
+        }
         footer {
             background: rgba(0, 0, 0, 0.9);
             border-top: 2px solid var(--crimson);
@@ -153,7 +294,13 @@
             }
             .story-card {
                 padding: 25px;
-                min-height: 250px;
+                min-height: 320px;
+            }
+            .newsletter-form {
+                flex-direction: column;
+            }
+            .newsletter-form input {
+                min-width: 100%;
             }
         }
         @media (max-width: 480px) {
@@ -166,6 +313,9 @@
             .story-card {
                 padding: 20px;
             }
+            .about-section {
+                padding: 20px;
+            }
         }
     </style>
 </head>
@@ -173,6 +323,12 @@
     <header>
         <h1>🐀 Συλλογή Γοτθικών Διηγημάτων</h1>
         <p class="subtitle">Μιχαήλ Σ. Μιχαλακόπουλος</p>
+        <div class="social-links">
+            <a href="https://github.com/Michelis2023" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
+            <a href="https://www.youtube.com/@MichelisPlays" target="_blank" title="YouTube"><i class="fab fa-youtube"></i></a>
+            <a href="https://www.tiktok.com/@michelis_77" target="_blank" title="TikTok"><i class="fab fa-tiktok"></i></a>
+            <a href="https://www.facebook.com/profile.php?id=100063736768765" target="_blank" title="Facebook"><i class="fab fa-facebook"></i></a>
+        </div>
     </header>
 
     <main>
@@ -181,11 +337,20 @@
                 <p>Διαβάστε παραδοσιακά διηγήματα εμπνευσμένα από την ελληνική λαογραφία και Γοτθικές ιστορίες</p>
             </div>
 
+            <!-- About Section -->
+            <div class="about-section">
+                <h2>📖 Σχετικά με τον Συγγραφέα</h2>
+                <p>Ο <strong>Μιχαήλ Σ. Μιχαλακόπουλος</strong> είναι συγγραφέας γοτθικών διηγημάτων με βαθιά αγάπη στην ελληνική λαογραφία και παράδοση. Εμπνευσμένος από τους μεγάλους δασκάλους του είδους και τις λαϊκές ιστορίες της Αρκαδίας, δημιουργεί αφηγήσεις που συνδυάζουν το σκοτεινό ρομαντισμό με τη μαγεία της ελληνικής υπαίθρου.</p>
+                <p>Κάθε διήγημα είναι ένα ταξίδι στο άγνωστο, όπου το παρελθόν συναντά το παρόν και οι σκιές της μνήμης ζωντανεύουν.</p>
+            </div>
+
             <div class="stories-grid">
                 <div class="story-card">
                     <div>
                         <h2>Τα Σμυρδάκια</h2>
                         <p class="author">Μιχαήλ Σ. Μιχαλακόπουλος</p>
+                        <div class="reading-time"><i class="far fa-clock"></i> ~8 λεπτά ανάγνωσης</div>
+                        <p class="story-description">Μια οικογένεια στην Αρκαδία αντιμετωπίζει μια αρχαία κατάρα που ξυπνά από τα βάθη της γης. Τα μυστηριώδη «σμυρδάκια» φέρνουν τρόμο και χάος στο χωριό.</p>
                         <p>Γοτθικό διήγημα τρόμου</p>
                     </div>
                     <a href="ta-smyrdakia.html" class="read-btn">Διάβασε Τώρα →</a>
@@ -195,6 +360,8 @@
                     <div>
                         <h2>Το Χέρι Κάτω από το Χώμα</h2>
                         <p class="author">Μιχαήλ Σ. Μιχαλακόπουλος</p>
+                        <div class="reading-time"><i class="far fa-clock"></i> ~12 λεπτά ανάγνωσης</div>
+                        <p class="story-description">Ένας άνδρας ανακαλύπτει ένα παλιό χέρι θαμμένο στον κήπο του. Τι μυστικά κρύβει το παρελθόν και ποιος ήταν ο ιδιοκτήτης αυτού του μακάβριου ευρήματος;</p>
                         <p>Γοτθικό διήγημα υπερφυσικού φόβου</p>
                     </div>
                     <a href="to-xeri-kato-apo-to-xoma.html" class="read-btn">Διάβασε Τώρα →</a>
@@ -204,6 +371,8 @@
                     <div>
                         <h2>Το Ζοφερόν Μυστικόν του Αγίου Ταξιάρχη</h2>
                         <p class="author">Μιχαήλ Σ. Μιχαλακόπουλος</p>
+                        <div class="reading-time"><i class="far fa-clock"></i> ~10 λεπτά ανάγνωσης</div>
+                        <p class="story-description">Σε ένα απομονωμένο μοναστήρι, ένα σκοτεινό μυστικό περιμένει να αποκαλυφθεί. Οι μοναχοί φυλάσσουν μια αλήθεια που θα μπορούσε να συντρίψει την πίστη κάθε πιστού.</p>
                         <p>Γοτθικό διήγημα τρόμου και υπερφυσικού</p>
                     </div>
                     <a href="to-zopheron-mystikon-tou-agiou-taxiarchi.html" class="read-btn">Διάβασε Τώρα →</a>
@@ -213,6 +382,8 @@
                     <div>
                         <h2>Η Λέσχη της Κυρίας Β.</h2>
                         <p class="author">Μιχαήλ Σ. Μιχαλακόπουλος</p>
+                        <div class="reading-time"><i class="far fa-clock"></i> ~15 λεπτά ανάγνωσης</div>
+                        <p class="story-description">Μια μυστηριώδης λέσχη στο κέντρο της πόλης προσκαλεί επιλεγμένους επισκέπτες. Όμως αυτό που φαίνεται ως κομψή διασκέδαση κρύβει σκοτεινούς σκοπούς.</p>
                         <p>Γοτθικό διήγημα τρόμου</p>
                     </div>
                     <a href="I-Leshi-tis-Kyrias-B..html" class="read-btn">Διάβασε Τώρα →</a>
@@ -232,13 +403,59 @@
                     </div>
                 </div>
             </div>
+
+            <!-- Share Section -->
+            <div style="text-align: center; margin: 40px 0;">
+                <h3 style="font-family: 'Cinzel', serif; color: var(--gold); margin-bottom: 20px;">📢 Μοιραστείτε τη Συλλογή</h3>
+                <div class="share-buttons">
+                    <a href="https://www.facebook.com/sharer/sharer.php?u=https://michelis2023.github.io/short-stories/" target="_blank" class="share-btn share-fb">
+                        <i class="fab fa-facebook-f"></i> Facebook
+                    </a>
+                    <a href="https://twitter.com/intent/tweet?url=https://michelis2023.github.io/short-stories/&text=Διαβάστε%20δωρεάν%20γοτθικά%20διηγήματα" target="_blank" class="share-btn share-twitter">
+                        <i class="fab fa-twitter"></i> Twitter
+                    </a>
+                    <a href="https://wa.me/?text=Διαβάστε%20δωρεάν%20γοτθικά%20διηγήματα%20https://michelis2023.github.io/short-stories/" target="_blank" class="share-btn share-whatsapp">
+                        <i class="fab fa-whatsapp"></i> WhatsApp
+                    </a>
+                </div>
+            </div>
+
+            <!-- Newsletter Section -->
+            <div class="newsletter-section">
+                <h3>📬 Ενημερωθείτε για Νέα Διηγήματα</h3>
+                <p>Εγγραφείτε για να μαθαίνετε πρώτοι για νέες δημοσιεύσεις και αποκλειστικό περιεχόμενο</p>
+                <div class="newsletter-form">
+                    <input type="email" placeholder="Το email σας" id="newsletter-email">
+                    <button onclick="subscribeNewsletter()">Εγγραφή</button>
+                </div>
+                <p style="font-size: 0.85rem; color: #999; margin-top: 15px;">* Δεν θα μοιραστούμε το email σας με τρίτους</p>
+            </div>
         </div>
     </main>
 
     <footer>
         <p>© 2026 Μιχαήλ Σ. Μιχαλακόπουλος | <a href="https://github.com/Michelis2023">Δείτε τα Άλλα Έργα</a></p>
+        <p style="margin-top: 10px; font-size: 0.85rem;">Όλα τα διηγήματα διατίθενται δωρεάν για ανάγνωση online</p>
     </footer>
+
+    <script>
+        function subscribeNewsletter() {
+            const email = document.getElementById('newsletter-email').value;
+            if (email && email.includes('@')) {
+                // Εδώ μπορείς να προσθέσεις integration με newsletter service (π.χ. Mailchimp, ConvertKit)
+                alert('Ευχαριστούμε για την εγγραφή σας! Θα λαμβάνετε ενημερώσεις για νέα διηγήματα.');
+                document.getElementById('newsletter-email').value = '';
+            } else {
+                alert('Παρακαλώ εισάγετε μια έγκυρη διεύθυνση email.');
+            }
+        }
+        
+        // Enter key support for newsletter
+        document.getElementById('newsletter-email').addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                subscribeNewsletter();
+            }
+        });
+    </script>
 </body>
-
 </html>
-
