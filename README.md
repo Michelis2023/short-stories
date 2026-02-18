@@ -46,6 +46,13 @@
 
 ---
 
+### 🏥 **Νυχτερινή Βάρδια στο Σανατόριο του Μαινάλου**
+**Ημερομηνία**: Φεβρουάριος 2026 | **Είδος**: Γοτθικό Τρόμου εμπνευσμένο από τον Πόε
+**Περιγραφή**: Φθινόπωρο 1898, Σανατόριο Αγίας Ευφροσύνης στο Μαίναλο. Ένας νέος γιατρός σε νυχτερινή βάρδια ανακαλύπτει τα φρικτά μυστικά μιας κλειστής σοφίτας και τα σκοτεινά μυστικά που βαρύνουν τους τοίχους του σανατορίου.
+[🔗 **Διάβασε το Διήγημα**](https://michelis2023.github.io/short-stories/nukhterine-bardia-sto-sanatorio-tou-mainalou.html)
+
+---
+
 ## ✨ Χαρακτηριστικά
 
 - 🎨 **Γοτθική Αισθητική**: Σκοτεινά χρώματα, παλαιωμένο χαρτί, Cinzel και EB Garamond γραμματοσειρές
@@ -87,6 +94,7 @@ short-stories/
 ├── ta-smyrdakia.html        # ✨ Πρόσφατα ενημερωμένο
 ├── to-xeri-kato-apo-to-xoma.html
 ├── to-zopheron-mystikon-tou-agiou-taxiarchi.html
+├── nukhterine-bardia-sto-sanatorio-tou-mainalou.html # ✨ Νέο διήγημα
 ├── index.html               # Αρχική σελίδα
 ├── README.md                # Αυτό το αρχείο
 └── google7e1e17ca9038df2f.html  # Google verification
