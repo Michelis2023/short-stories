@@ -1,6 +1,6 @@
 # 🐀 Συλλογή Γοτθικών Διηγημάτων
 
-[![License: All Rights Reserved](https://img.shields.io/badge/License-All%20Rights%20Reserved-blue?style=for-the-badge)](https://creativecommons.org/publicdomain/zero/1.0/)
+[![License: All Rights Reserved](https://img.shields.io/badge/License-All%20Rights%20Reserved-blue?style=for-the-badge)](https://github.com/Michelis2023/short-stories/blob/main/LICENSE)
 [![Language: Greek](https://img.shields.io/badge/Language-Ελληνικά-blue?style=for-the-badge)](https://el.wikipedia.org)
 [![Genre: Gothic Horror](https://img.shields.io/badge/Genre-Gothic%20Horror-red?style=for-the-badge)](https://en.wikipedia.org/wiki/Gothic_fiction)
 [![Live Site](https://img.shields.io/badge/Live%20Site-GitHub%20Pages-brightgreen?style=for-the-badge)](https://michelis2023.github.io/short-stories/)
@@ -96,6 +96,7 @@ short-stories/
 ├── to-zopheron-mystikon-tou-agiou-taxiarchi.html
 ├── nukhterine-bardia-sto-sanatorio-tou-mainalou.html # ✨ Νέο διήγημα
 ├── index.html               # Αρχική σελίδα
+├── LICENSE                  # Επίσημο αρχείο άδειας
 ├── README.md                # Αυτό το αρχείο
 └── google7e1e17ca9038df2f.html  # Google verification
 ```
@@ -104,7 +105,7 @@ short-stories/
 
 ## 🚀 Πώς να Διαβάσεις τα Διηγήματα
 
-1. **Online**: Επισκέψου το [Live Site](https://michelis2023.github.io/short-stories/)
+1. **Online**: Επίσκεψου το [Live Site](https://michelis2023.github.io/short-stories/)
 2. **Τοπικά**: Κατέβασε το repository και άνοιξε οποιοδήποτε `.html` αρχείο στον browser σου
 3. **GitHub**: Πλοήγησε στα αρχεία απευθείας από το repository
 
@@ -133,12 +134,14 @@ short-stories/
 
 ---
 
-## 📜 Άδεια Χρήσης
+## 📏 Άδεια Χρήσης
 
 **© 2026 Μιχαήλ Σωτηρίου Μιχαλακόπουλος**  
 **All Rights Reserved** — Όλα τα δικαιώματα διατηρούνται.
 
 Τα κείμενα και ο κώδικας σε αυτό το repository προστατεύονται από το νόμο περί πνευματικής ιδιοκτησίας. Απαγορεύεται η αναπαραγωγή, διανομή ή τροποποίηση χωρίς την έγγραφη άδεια του δημιουργού.
+
+Για περισσότερες λεπτομέρειες, δείτε το επίσημο [LICENSE αρχείο](https://github.com/Michelis2023/short-stories/blob/main/LICENSE).
 
 ---
 
