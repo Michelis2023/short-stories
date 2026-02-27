@@ -1,0 +1,169 @@
+/* Print Stylesheet για Γοτθικά Διηγήματα */
+
+@media print {
+    /* Απόκρυψη στοιχείων που δεν χρειάζονται στην εκτύπωση */
+    header .social-links,
+    .share-buttons,
+    .share-btn,
+    .newsletter,
+    footer,
+    .read-btn,
+    nav,
+    button,
+    .no-print {
+        display: none !important;
+    }
+
+    /* Βασικές ρυθμίσεις σελίδας */
+    * {
+        background: white !important;
+        color: black !important;
+        box-shadow: none !important;
+        text-shadow: none !important;
+    }
+
+    body {
+        font-family: 'Garamond', Georgia, serif;
+        font-size: 12pt;
+        line-height: 1.6;
+        margin: 2cm;
+        background: white !important;
+    }
+
+    /* Τίτλοι */
+    h1, h2, h3, h4 {
+        page-break-after: avoid;
+        font-family: 'Cinzel', Georgia, serif;
+        color: #000 !important;
+    }
+
+    h1 {
+        font-size: 24pt;
+        margin-bottom: 0.5cm;
+        border-bottom: 2pt solid #000;
+        padding-bottom: 0.3cm;
+    }
+
+    h2 {
+        font-size: 18pt;
+        margin-top: 1cm;
+        margin-bottom: 0.5cm;
+    }
+
+    h3 {
+        font-size: 14pt;
+        margin-top: 0.8cm;
+        margin-bottom: 0.4cm;
+    }
+
+    /* Παράγραφοι */
+    p {
+        orphans: 3;
+        widows: 3;
+        text-align: justify;
+        margin-bottom: 0.5cm;
+    }
+
+    /* Λίστες */
+    ul, ol {
+        margin-left: 1cm;
+    }
+
+    /* Blockquotes */
+    blockquote {
+        border-left: 3pt solid #000;
+        padding-left: 0.5cm;
+        margin: 1cm 0;
+        font-style: italic;
+    }
+
+    /* Links */
+    a {
+        color: #000 !important;
+        text-decoration: underline;
+    }
+
+    a[href]:after {
+        content: " (" attr(href) ")";
+        font-size: 9pt;
+        font-style: italic;
+    }
+
+    /* Αποφυγή page breaks */
+    .story-card,
+    .about-section,
+    section,
+    article {
+        page-break-inside: avoid;
+    }
+
+    /* Header για εκτύπωση */
+    header {
+        border-bottom: 2pt solid #000;
+        padding-bottom: 0.5cm;
+        margin-bottom: 1cm;
+    }
+
+    /* Διακοσμητικές γραμμές */
+    .decorative-line {
+        text-align: center;
+        margin: 1cm 0;
+        color: #000 !important;
+    }
+
+    /* Grid cards σε στήλη */
+    .stories-grid {
+        display: block !important;
+    }
+
+    .story-card {
+        border: 1pt solid #000 !important;
+        padding: 0.5cm;
+        margin-bottom: 1cm;
+        page-break-inside: avoid;
+    }
+
+    /* Αρίθμηση σελίδων */
+    @page {
+        margin: 2cm;
+        size: A4;
+        
+        @bottom-center {
+            content: "Σελίδα " counter(page) " από " counter(pages);
+            font-size: 10pt;
+        }
+    }
+
+    /* Πρώτη σελίδα χωρίς αριθμό */
+    @page :first {
+        @bottom-center {
+            content: "";
+        }
+    }
+
+    /* Subtitle */
+    .subtitle {
+        font-size: 14pt;
+        font-style: italic;
+        color: #333 !important;
+    }
+
+    /* Author info */
+    .author {
+        font-size: 10pt;
+        font-style: italic;
+        color: #666 !important;
+    }
+
+    /* Story description */
+    .story-description {
+        font-size: 11pt;
+        line-height: 1.5;
+        margin: 0.3cm 0;
+    }
+
+    /* Reading time - απόκρυψη */
+    .reading-time {
+        display: none;
+    }
+}
