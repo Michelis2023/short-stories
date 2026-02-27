@@ -7,7 +7,7 @@
   <!-- Αρχική Σελίδα -->
   <url>
     <loc>https://michelis2023.github.io/short-stories/</loc>
-    <lastmod>2026-02-20</lastmod>
+    <lastmod>2026-02-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
@@ -58,6 +58,14 @@
     <lastmod>2026-02-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
+  </url>
+
+  <!-- LICENSE -->
+  <url>
+    <loc>https://michelis2023.github.io/short-stories/LICENSE</loc>
+    <lastmod>2026-02-27</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
   </url>
 
 </urlset>
