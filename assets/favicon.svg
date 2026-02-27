@@ -1,0 +1,9 @@
+<svg width="32" height="32" xmlns="http://www.w3.org/2000/svg">
+  <rect width="32" height="32" fill="#1a0f0a"/>
+  <text x="16" y="24" 
+        font-family="Georgia, serif" 
+        font-size="20" 
+        fill="#D4AF37" 
+        text-anchor="middle" 
+        font-weight="bold">Γ</text>
+</svg>
