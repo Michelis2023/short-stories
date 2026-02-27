@@ -384,6 +384,79 @@
             margin: 40px 0;
             letter-spacing: 20px;
         }
+        
+        /* Stats Section */
+        .stats-section {
+            margin: 60px 0;
+            padding: 40px 0;
+            border-top: 2px solid var(--crimson);
+            border-bottom: 2px solid var(--crimson);
+            text-align: center;
+        }
+        .stats-section h2 {
+            color: var(--gold);
+            font-family: 'Cinzel', serif;
+            font-size: clamp(1.5rem, 4vw, 2rem);
+            margin-bottom: 40px;
+        }
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            margin-bottom: 40px;
+            max-width: 900px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .stat-card {
+            background: rgba(139, 0, 0, 0.15);
+            border: 2px solid var(--crimson);
+            border-radius: 12px;
+            padding: 30px 20px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+        }
+        .stat-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(139, 0, 0, 0.5);
+            background: rgba(139, 0, 0, 0.25);
+        }
+        .stat-icon {
+            font-size: 3rem;
+            margin-bottom: 15px;
+        }
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: var(--gold);
+            margin-bottom: 10px;
+            font-family: 'Cinzel', serif;
+        }
+        .stat-label {
+            font-size: 1rem;
+            color: #ccc;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        .github-badge {
+            margin: 40px 0;
+            text-align: center;
+        }
+        .github-badge img {
+            transition: transform 0.3s ease;
+            height: 32px;
+        }
+        .github-badge a:hover img {
+            transform: scale(1.1);
+        }
+        .github-note {
+            margin-top: 15px;
+            color: var(--gold);
+            font-style: italic;
+            font-size: 0.95rem;
+        }
+        
         @media (max-width: 768px) {
             .stories-grid {
                 grid-template-columns: 1fr;
@@ -391,6 +464,28 @@
             .share-buttons {
                 flex-direction: column;
                 align-items: center;
+            }
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 20px;
+            }
+            .stat-card {
+                padding: 20px 15px;
+            }
+            .stat-icon {
+                font-size: 2.5rem;
+            }
+            .stat-number {
+                font-size: 2rem;
+            }
+            .stat-label {
+                font-size: 0.9rem;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .stats-grid {
+                grid-template-columns: 1fr;
             }
         }
     </style>
@@ -509,6 +604,35 @@
             </div>
 
             <div class="decorative-line">⚔️ | 🕯️ | 💀 | 🕯️ | ⚔️</div>
+
+            <!-- Stats Section -->
+            <section class="stats-section">
+                <h2>📊 Σε Αριθμούς</h2>
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-icon">📖</div>
+                        <div class="stat-number">6</div>
+                        <div class="stat-label">Διηγήματα</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon">⏱️</div>
+                        <div class="stat-number">~75</div>
+                        <div class="stat-label">Λεπτά Ανάγνωσης</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon">🌙</div>
+                        <div class="stat-number">100%</div>
+                        <div class="stat-label">Δωρεάν Online</div>
+                    </div>
+                </div>
+                
+                <div class="github-badge">
+                    <a href="https://github.com/Michelis2023/short-stories" target="_blank" rel="noopener">
+                        <img src="https://img.shields.io/github/stars/Michelis2023/short-stories?style=for-the-badge&logo=github&label=Star%20on%20GitHub&color=D4AF37&labelColor=8B0000" alt="GitHub Stars">
+                    </a>
+                    <p class="github-note">⭐ Κάνε star στο GitHub αν σου άρεσε!</p>
+                </div>
+            </section>
 
             <div class="share-buttons">
                 <h3 style="width: 100%; text-align: center; color: var(--gold); font-family: 'Cinzel', serif; margin-bottom: 15px;"><i class="fas fa-share-alt"></i> Μοιραστείτε τη Συλλογή</h3>
