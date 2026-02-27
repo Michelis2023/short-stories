@@ -1,71 +1,58 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-        xmlns:news="http://www.google.com/schemas/sitemap-news/0.9"
-        xmlns:xhtml="http://www.w3.org/1999/xhtml"
-        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+        http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
 
-  <!-- Αρχική Σελίδα -->
+  <!-- Κύρια σελίδα -->
   <url>
     <loc>https://michelis2023.github.io/short-stories/</loc>
     <lastmod>2026-02-27</lastmod>
-    <changefreq>monthly</changefreq>
+    <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
 
-  <!-- Τα Σμυρδάκια -->
+  <!-- Διηγήματα -->
   <url>
     <loc>https://michelis2023.github.io/short-stories/ta-smyrdakia.html</loc>
-    <lastmod>2026-02-20</lastmod>
+    <lastmod>2026-02-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
 
-  <!-- Η Σκιά Μέσα Στον Καθρέφτη -->
-  <url>
-    <loc>https://michelis2023.github.io/short-stories/i-skia-mesa-ston-kathrefthi.html</loc>
-    <lastmod>2026-02-20</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-
-  <!-- Το Χέρι Κάτω από το Χώμα -->
   <url>
     <loc>https://michelis2023.github.io/short-stories/to-xeri-kato-apo-to-xoma.html</loc>
-    <lastmod>2026-01-15</lastmod>
+    <lastmod>2026-02-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
 
-  <!-- Το Ζοφερόν Μυστικόν του Αγίου Ταξιάρχη -->
   <url>
     <loc>https://michelis2023.github.io/short-stories/to-zopheron-mystikon-tou-agiou-taxiarchi.html</loc>
-    <lastmod>2026-01-15</lastmod>
+    <lastmod>2026-02-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
 
-  <!-- Η Λέσχη της Κυρίας Β. -->
   <url>
     <loc>https://michelis2023.github.io/short-stories/I-Leshi-tis-Kyrias-B..html</loc>
-    <lastmod>2025-12-15</lastmod>
+    <lastmod>2026-02-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
 
-  <!-- Νυχτερινή Βάρδια στο Σανατόριο του Μαινάλου -->
+  <url>
+    <loc>https://michelis2023.github.io/short-stories/i-skia-mesa-ston-kathrefthi.html</loc>
+    <lastmod>2026-02-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
   <url>
     <loc>https://michelis2023.github.io/short-stories/nukhterine-bardia-sto-sanatorio-tou-mainalou.html</loc>
-    <lastmod>2026-02-20</lastmod>
+    <lastmod>2026-02-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
-  </url>
-
-  <!-- LICENSE -->
-  <url>
-    <loc>https://michelis2023.github.io/short-stories/LICENSE</loc>
-    <lastmod>2026-02-27</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.5</priority>
   </url>
 
 </urlset>

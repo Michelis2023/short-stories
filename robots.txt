@@ -1,32 +1,14 @@
 # robots.txt για Γοτθικά Διηγήματα
-# Μιχαήλ Σ. Μιχαλακόπουλος
 # https://michelis2023.github.io/short-stories/
 
 User-agent: *
 Allow: /
 
-# Sitemap location
+# Sitemap
 Sitemap: https://michelis2023.github.io/short-stories/sitemap.xml
 
-# Crawl-delay για να μην επιβαρύνουμε το GitHub Pages
-Crawl-delay: 10
+# Αποφυγή crawling σε assets
+Disallow: /assets/
 
-# Ειδικές οδηγίες για Google
-User-agent: Googlebot
-Allow: /
-Crawl-delay: 5
-
-# Ειδικές οδηγίες για Bing
-User-agent: Bingbot
-Allow: /
-Crawl-delay: 5
-
-# Αποκλεισμός spam bots
-User-agent: AhrefsBot
-Disallow: /
-
-User-agent: SemrushBot
-Disallow: /
-
-User-agent: DotBot
-Disallow: /
+# Επιτρέπουμε όλα τα HTML
+Allow: /*.html$
